@@ -19,9 +19,10 @@ int	ra(t_stack *a)
 	
 	i = a->index_top;
 	temps = a->array[a->index_top];
-	while (i > 0)
+	while (i >= 0)
 	{
 		a->array[i] = a->array[i - 1];
+		printf("%d\n", a->array[i]);
 		i--;
 	}
 	a->array[0] = temps;

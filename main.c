@@ -24,12 +24,12 @@ int main(int ac, char **av)
         t_stack stack_a;
         t_stack stack_b;
         stack_a = create_stack(av, length);
-        stack_b.index_top = -1; 
+        stack_b.index_top = -1;
         ra(&stack_a);
-        while (i < ac -1)
-        {
-            printf("%d\n", stack_a.array[i]);
-            i++;
-        }
+        // while (i < ac -1)
+        // {
+        //     printf("%d\n", stack_a.array[i]);
+        //     i++;
+        // }
     }
 }
