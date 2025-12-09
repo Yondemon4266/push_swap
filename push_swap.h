@@ -6,7 +6,7 @@
 /*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:11:29 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/09 13:50:46 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2025/12/09 14:03:56 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_stack
 }	t_stack;
 
 t_stack	*go_back(t_stack *stack);
-t_tab *add_back(t_tab *lst,t_tab *element);
-int delete_element(t_tab *lst);
+t_stack *add_back(t_stack *lst,t_stack *element);
+int delete_element(t_stack *lst);
 
 #endif

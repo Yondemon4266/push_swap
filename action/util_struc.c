@@ -6,13 +6,13 @@
 /*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 12:50:57 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/09 13:51:05 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2025/12/09 14:03:24 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*go_back(t_tab *stack)
+t_stack	*go_back(t_stack *stack)
 {
 	if (stack == 0)
 		return (0);
@@ -21,7 +21,7 @@ t_stack	*go_back(t_tab *stack)
 	return (stack);
 }
 
-t_tab *add_back(t_tab *lst,t_tab *element)
+t_stack *add_back(t_stack *lst,t_stack *element)
 {
 	if (lst || element)
 		return (0);
@@ -32,7 +32,7 @@ t_tab *add_back(t_tab *lst,t_tab *element)
 	return (lst);
 }
 
-int delete_element(t_tab *lst)
+int delete_element(t_stack *lst)
 {
 	if (lst == 0)
 		return (0);
