@@ -19,9 +19,9 @@ int	rb(t_stack *b)
 	
 	i = b->index_top;
 	temps = b->array[b->index_top];
-	while (i > 0)
+	while (i >= 0)
 	{
-		b->array[i] = b->array[i - 1];
+		b->array[i] = b->array[i];
 		i--;
 	}
 	b->array[0] = temps;
