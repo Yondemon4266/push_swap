@@ -14,5 +14,6 @@
 
 int	pa(t_stack *a, t_stack *b)
 {
+	
 	return (1);
 }
