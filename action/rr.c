@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ss.c                                               :+:      :+:    :+:   */
+/*   rr.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 16:12:48 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/09 16:26:49 by mbichet          ###   ########lyon.fr   */
+/*   Created: 2025/12/09 16:26:51 by mbichet           #+#    #+#             */
+/*   Updated: 2025/12/09 16:27:14 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	ss(t_stack *a, t_stack *b)
+int rr(t_stack *a, t_stack *b)
 {
-	if (!sa(a))
+	if (!ra(a))
 		return (0);
 	if (!rb(b))
 		return (0);

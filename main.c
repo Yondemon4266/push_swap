@@ -25,7 +25,7 @@ int main(int ac, char **av)
         t_stack stack_b;
         stack_a = create_stack(av, length);
         stack_b.index_top = -1;
-        rb(&stack_a);
+        ra(&stack_a);
         // while (i < ac -1)
         // {
         //     printf("%d\n", stack_a.array[i]);
