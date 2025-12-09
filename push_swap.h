@@ -22,5 +22,11 @@ typedef struct s_stack
 
 }	t_stack;
 
+int	pa(t_stack *a, t_stack *b);
+void swap_a(t_stack *a);
+int	rra(t_stack *a);
+int	pb(t_stack *a, t_stack *b);
+int	ra(t_stack a);
+int	rb(t_stack *b);
 
 #endif
