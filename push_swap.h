@@ -27,7 +27,7 @@ void swap_a(t_stack *a);
 int	rra(t_stack *a);
 int	rrb(t_stack *b);
 int	pb(t_stack *a, t_stack *b);
-int	ra(t_stack a);
+int	ra(t_stack *a);
 int	rb(t_stack *b);
 
 #endif

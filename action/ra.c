@@ -12,18 +12,18 @@
 
 #include "../push_swap.h"
 
-int	ra(t_stack a)
+int	ra(t_stack *a)
 {
 	int i;
 	int temps;
 	
-	i = a.index_top;
-	temps = a.array[a.index_top];
+	i = a->index_top;
+	temps = a->array[a->index_top];
 	while (i > 0)
 	{
-		a.array[i] = a.array[i - 1];
+		a->array[i] = a->array[i - 1];
 		i--;
 	}
-	a.array[0] = temps;
+	a->array[0] = temps;
 	return (0);
 }
