@@ -6,9 +6,9 @@ t_stack create_stack(char **av, int length)
     t_stack stack;
     int i;
     i = 0;
-    while (i < length)
+    while (length - i - 1 >= 0)
     {
-        stack.array[i] = atoi(av[i + 1]);
+        stack.array[length - i - 1] = atoi(av[i + 1]);
         i++;
     }
     stack.index_top = length - 1;
@@ -20,16 +20,22 @@ int main(int ac, char **av)
     if (ac >= 2)
     {
         int i = 0;
-        int length = ac - 1;
+        int length = ac -1;
         t_stack stack_a;
         t_stack stack_b;
         stack_a = create_stack(av, length);
-        stack_b.index_top = -1;
-        ra(&stack_a);
-        // while (i < ac -1)
-        // {
-        //     printf("%d\n", stack_a.array[i]);
-        //     i++;
-        // }
+        stack_b.array[0] = 1;
+        stack_b.index_top = 0;
+        rr(&stack_a, &stack_b);
+        while (stack_a.index_top >= 0)
+        {
+            printf("%d\n", stack_a.array[stack_a.index_top]);
+            stack_a.index_top--;
+        }
+            while (stack_b.index_top >= 0)
+        {
+            printf("stack b:%d\n", stack_b.array[stack_b.index_top]);
+            stack_b.index_top--;
+        }
     }
 }
