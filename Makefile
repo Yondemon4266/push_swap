@@ -14,7 +14,7 @@ C_FILE = main.c \
 		 action/sa.c \
 		 action/sb.c \
 		 action/ss.c \
-		 sort/insertionc \
+		 sort/buble.c \
 
 O_FILE	= $(C_FILE:.c=$(BUILDDIR)/%.o)
 D_FILE = $(O_FILE:.o=.d)
