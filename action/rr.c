@@ -14,9 +14,7 @@
 
 int rr(t_stack *a, t_stack *b)
 {
-	if (!ra(a))
-		return (0);
-	if (!rb(b))
-		return (0);
+	ra(a);
+	rb(b);
 	return (1);
 }

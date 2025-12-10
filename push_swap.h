@@ -15,6 +15,10 @@
 
 #define MAX_SIZE_ARAY 100
 
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdio.h>
+# include "libft/libft.h"
 typedef struct s_stack
 {
 	int	index_top;
@@ -29,8 +33,12 @@ int	rb(t_stack *b);
 int rr(t_stack *a, t_stack *b);
 int	rra(t_stack *a);
 int	rrb(t_stack *b);
+int rrr(t_stack *a, t_stack *b);
 int	sa(t_stack *a);
 int	sb(t_stack *b);
 int	ss(t_stack *a, t_stack *b);
+int	buble(t_stack *a);
+void	swap(int *a, int *b);
+void ft_putstr(char *str);
 
 #endif

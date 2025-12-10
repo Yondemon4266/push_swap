@@ -14,14 +14,23 @@
 
 int	rb(t_stack *b)
 {
+	if (!b)
+		return (0);
+	if (b->index_top <= 0)
+		return (0);
 	int i;
 	int temps;
 	
-	i = b->index_top;
+	if (b->index_top == 1)
+	{
+		swap(&b->array[1], &b->array[0]);
+		return (1);
+	}
+	i = b->array[b->index_top];
 	temps = b->array[b->index_top];
 	while (i > 0)
 	{
-		b->array[i] = b->array[i - 1];
+		b->array[i] = b->array[i - 1]; 
 		i--;
 	}
 	b->array[0] = temps;

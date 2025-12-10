@@ -14,14 +14,23 @@
 
 int	ra(t_stack *a)
 {
+	if (!a)
+		return (0);
+	if (a->index_top <= 0)
+		return (0);
 	int i;
 	int temps;
-	
+	if (a->index_top == 1)
+	{
+		swap(&a->array[1], &a->array[0]);
+		return (1);
+	}
 	i = a->index_top;
 	temps = a->array[a->index_top];
 	while (i > 0)
 	{
-		a->array[i] = a->array[i + 1];
+		// __builtin_printf("stack a: %d\n",a->array[i]);
+		a->array[i] = a->array[i - 1];
 		i--;
 	}
 	a->array[0] = temps;

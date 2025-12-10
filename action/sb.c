@@ -14,10 +14,8 @@
 
 int	sb(t_stack *b)
 {
-	int	temps;
-
-	temps = b->array[b->index_top];
-	b->array[b->index_top] = b->array[b->index_top - 1];
-	b->array[b->index_top - 1] = temps;
-	return (0);
+	if (b->index_top <= 0)
+		return (0);
+	swap(&b->array[b->index_top], &b->array[b->index_top - 1]);
+	return (1);
 }

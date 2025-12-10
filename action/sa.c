@@ -10,14 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	sa(t_stack *a)
 {
-	int	temps;
-
-	temps = a->array[a->index_top];
-	a->array[a->index_top] = a->array[a->index_top - 1];
-	a->array[a->index_top - 1] = temps;
-	return (0);
+	if (a->index_top <= 0)
+		return (0);
+	swap(&a->array[a->index_top], &a->array[a->index_top - 1]);
+	return (1);
 }
