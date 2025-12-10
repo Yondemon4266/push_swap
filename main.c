@@ -16,29 +16,77 @@ t_stack fill_stack(char **av, int length)
     return (stack);
 }
 
+static int is_valid_flag(char *flag)
+{
+    if (ft_strcmp(flag, "--simple") == 0)
+        return (1);
+    else if (ft_strcmp(flag, "--medium") == 0)
+        return (1);
+    else if (ft_strcmp(flag, "--complex") == 0)
+        return (1);
+    else if (ft_strcmp("--adaptive", flag) == 0)
+        return (1);
+    else
+    {
+        ft_putendl_fd("Error", 2);
+        exit(EXIT_FAILURE);
+        return (0);    
+    }
+}
+
+static int manage_flag(char *flag)
+{
+    if (ft_strcmp(flag, "--simple") == 0)
+        return (1);
+    else if (ft_strcmp(flag, "--medium") == 0)
+        return (1);
+    else if (ft_strcmp(flag, "--complex") == 0)
+        return (1);
+    else if (ft_strcmp("--adaptive", flag) == 0)
+        return (1);
+    else
+    {
+        ft_putendl_fd("Error", 2);
+        exit(EXIT_FAILURE);
+    }
+}
+
+static int  is_number(char *s)
+{
+    int i;
+
+    i = 0;
+    while (s[i] )
+    {
+        if ()
+    }
+}
+
+
+static void manage_input(char **av, int ac, int offset)
+{
+    int i;
+    char    **arr;
+    char    *concat_str;
+    i = 0;
+    while (i + offset < ac)
+    {
+         
+    }
+}
 
 int main(int ac, char **av)
 {
     if (ac >= 2)
     {
-        char **arr;
-        int length = ac -1;
-        t_stack stack_a;
-        t_stack stack_b;
-        
-        arr = ft_split(av[1], ' ');
-        stack_a = fill_stack(av, length);
-        stack_b.index_top = -1;
-        
-                // while (stack_a.index_top >= 0)
-        // {
-        //     printf("stack a:%d\n", stack_a.array[stack_a.index_top]);
-        //     stack_a.index_top--;
-        // }
-        //     while (stack_b.index_top >= 0)
-        // {
-        //     printf("stack b:%d\n", stack_b.array[stack_b.index_top]);
-        //     stack_b.index_top--;
-        // }
+       int  i;
+
+       i = 1;
+       if (ft_strncmp(av[i], "--", 2) == 0 && is_valid_flag(av[i]))
+       {
+            manage_flag(av[i]);
+            i++;
+       }
+       manage_input(av + i, ac, i);
     }
 }
