@@ -36,6 +36,7 @@ int main(int ac, char **av)
         {
             printf("stack b:%d\n", stack_b.array[stack_b.index_top]);
             stack_b.index_top--;
+            printf("test");
         }
     }
 }
