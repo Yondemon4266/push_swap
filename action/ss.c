@@ -6,11 +6,11 @@
 /*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 16:12:48 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/10 08:51:33 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 09:52:30 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ss(t_stack *a, t_stack *b)
 {
