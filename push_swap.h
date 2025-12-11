@@ -6,7 +6,7 @@
 /*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:11:29 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/11 14:36:04 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2025/12/11 15:11:07 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
-# include "libft/libft.h"
+//# include "libft/libft.h"
 
-#define MAX_SIZE_ARAY 50000
+#define MAX_SIZE_ARRAY 50000
 
 typedef struct s_stack
 {
