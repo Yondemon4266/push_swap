@@ -6,7 +6,7 @@
 /*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:11:29 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/10 08:52:23 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 09:53:03 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ int		ss(t_stack *a, t_stack *b);
 int		buble(t_stack *a);
 void	swap(int *a, int *b);
 void	ft_putstr(char *str);
+
+int	insertion(t_stack *a);
 
 #endif

@@ -168,7 +168,15 @@ static t_stack manage_input(char **av, int ac)
 
 int main(int ac, char **av)
 {
-    if (ac >= 2)
+    int i = 0;
+    int length = ac -1;
+    t_stack stack_a;
+    t_stack stack_b;
+    stack_a = create_stack(av, length);
+    stack_b.array[0] = 1;
+    stack_b.index_top = 0;
+    insertion(&stack_a);
+    while (stack_a.index_top >= 0)
     {
         t_stack stack_a;
         int  i;

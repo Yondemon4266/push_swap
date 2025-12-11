@@ -26,15 +26,11 @@ int	buble(t_stack *a)
 		while (j <= n)
 		{
 			if (j < n - i && a->array[n] > a->array[n- 1])
-			{
 				sa(a);
-				ft_putstr("sa\n");
-			}
 			ra(a);
-			ft_putstr("ra\n");
 			j++;
 		}
 		i++;
 	}
-	return (1);
+	return (0);
 }

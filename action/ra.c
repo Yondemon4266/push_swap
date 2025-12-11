@@ -6,7 +6,7 @@
 /*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 14:21:40 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/10 08:49:17 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 10:02:50 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,12 @@ int	ra(t_stack *a)
 		return (0);
 	int i;
 	int temps;
-	if (a->index_top == 1)
-	{
-		swap(&a->array[1], &a->array[0]);
-		return (1);
-	}
+	
+	printf("ra\n");
 	i = a->index_top;
 	temps = a->array[a->index_top];
 	while (i > 0)
 	{
-		// __builtin_printf("stack a: %d\n",a->array[i]);
 		a->array[i] = a->array[i - 1];
 		i--;
 	}
