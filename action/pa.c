@@ -14,6 +14,10 @@
 
 int	pa(t_stack *a, t_stack *b)
 {
+	if (!a || !b)
+		return (0);
+	if (b->index_top == -1)
+		return (0);
 	a->index_top += 1;
 	a->array[a->index_top] = b->array[b->index_top];
 	b->index_top -= 1;

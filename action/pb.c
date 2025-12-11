@@ -14,6 +14,10 @@
 
 int	pb(t_stack *a, t_stack *b)
 {
+	if (!a || !b)
+		return (0);
+	if (a->index_top == -1)
+		return (0);
 	b->index_top += 1;
 	b->array[b->index_top] = a->array[a->index_top];
 	a->index_top -= 1;

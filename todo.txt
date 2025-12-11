@@ -1,0 +1,2 @@
+Prendre l'input qui peut etre : ./push_swap "1 3 5 91 2 0 -10 50 -1" 
+qui peut aussi etre : ./push_swap 1 3 5 91 2 0 -10 50 -1
