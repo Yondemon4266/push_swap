@@ -18,7 +18,7 @@
 # include <stdio.h>
 # include "libft/libft.h"
 
-# define MAX_SIZE_ARRAY 100
+# define MAX_SIZE_ARRAY 4
 
 typedef struct s_stack
 {

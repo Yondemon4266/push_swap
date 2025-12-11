@@ -157,7 +157,7 @@ static t_stack manage_input(char **av, int ac)
         exit(EXIT_FAILURE);
     }
     stack_a.index_top = count_size_tab(splitted);
-    if (stack_a.index_top > MAX_SIZE_ARRAY)
+    if (stack_a.index_top + 1 > MAX_SIZE_ARRAY)
     {
         ft_putendl_fd("Error overflow array size", 2);
         exit(EXIT_FAILURE);
