@@ -168,19 +168,12 @@ static t_stack manage_input(char **av, int ac)
 
 int main(int ac, char **av)
 {
-    int i = 0;
-    int length = ac -1;
-    t_stack stack_a;
-    t_stack stack_b;
-    stack_a = create_stack(av, length);
-    stack_b.array[0] = 1;
-    stack_b.index_top = -1;
-    radix(&stack_a, &stack_b);
-    while (stack_a.index_top >= 0 || stack_b.index_top >= 0)
+    if (ac >= 2)
     {
-        t_stack stack_a;
-        int  i;
+        int i;
         int j;
+        t_stack stack_a;
+        t_stack stack_b;
 
         i = 1;
         if (ft_strncmp(av[i], "--", 2) == 0 && is_valid_flag(av[i]))
@@ -188,7 +181,11 @@ int main(int ac, char **av)
             manage_flag(av[i]);
             i++;
         }
+        stack_b.array[0] = 1;
+        stack_b.index_top = -1;
         stack_a = manage_input(av + i, ac - i);
+        // radix(&stack_a, &stack_b);
+        buble(&stack_a);
         j = stack_a.index_top;
         while (j >= 0)
         {

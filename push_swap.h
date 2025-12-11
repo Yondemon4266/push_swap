@@ -6,7 +6,7 @@
 /*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:11:29 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/11 15:11:07 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2025/12/11 15:35:01 by aluslu           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
-//# include "libft/libft.h"
+# include "libft/libft.h"
 
 #define MAX_SIZE_ARRAY 50000
 
@@ -40,7 +40,6 @@ int		sb(t_stack *b);
 int		ss(t_stack *a, t_stack *b);
 int		buble(t_stack *a);
 void	swap(int *a, int *b);
-void	ft_putstr(char *str);
 
 int	buble(t_stack *a);
 int	medium(t_stack *a, t_stack *b);

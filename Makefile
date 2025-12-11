@@ -17,8 +17,8 @@ C_FILE      = main.c \
               action/sb.c \
               action/ss.c \
               sort/buble.c \
-              utils/swap.c \
-              utils/ft_putstr.c
+              sort/complex.c \
+              utils/swap.c
 
 O_FILE      = $(C_FILE:%.c=$(BUILDDIR)/%.o)
 
