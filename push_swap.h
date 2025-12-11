@@ -18,12 +18,12 @@
 # include <stdio.h>
 # include "libft/libft.h"
 
-# define MAX_SIZE_ARAY 100
+# define MAX_SIZE_ARRAY 100
 
 typedef struct s_stack
 {
 	int	index_top;
-	int	array[MAX_SIZE_ARAY];
+	int	array[MAX_SIZE_ARRAY];
 
 }	t_stack;
 

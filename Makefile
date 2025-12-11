@@ -28,11 +28,11 @@ all: $(NAME)
 
 $(NAME): $(O_FILE)
 	make -C libft/
-	$(CC) $(CFLAGS) -o $@ $(O_FILE) -Llibft -lft
+	$(CC) $(CFLAGS) -g3 -o $@ $(O_FILE) -Llibft -lft
 
 $(BUILDDIR)/%.o: %.c
 	mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -g3 -c  $< -o $@
 
 clean:
 	$(RM) -r $(BUILDDIR)
