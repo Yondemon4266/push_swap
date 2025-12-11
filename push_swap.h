@@ -6,7 +6,7 @@
 /*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:11:29 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/10 09:53:03 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2025/12/11 14:36:04 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <stdio.h>
 
-#define MAX_SIZE_ARAY 100
+#define MAX_SIZE_ARAY 50000
 
 typedef struct s_stack
 {
@@ -35,6 +35,8 @@ int	sa(t_stack *a);
 int	sb(t_stack *b);
 int	ss(t_stack *a, t_stack *b);
 
-int	insertion(t_stack *a);
+int	buble(t_stack *a);
+int	medium(t_stack *a, t_stack *b);
+int radix(t_stack *a, t_stack *b);
 
 #endif

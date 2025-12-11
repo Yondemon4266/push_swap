@@ -1,36 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   buble.c                                            :+:      :+:    :+:   */
+/*   complex.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 17:26:58 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/11 11:48:28 by mbichet          ###   ########lyon.fr   */
+/*   Created: 2025/12/11 12:04:11 by mbichet           #+#    #+#             */
+/*   Updated: 2025/12/11 14:40:24 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	buble(t_stack *a)
+
+int dispach(t_stack *a, t_stack *b, int masque)
 {
 	int i;
-	int j;
-	int n;
-
-	i = 0;
-	n = a->index_top;
-	while (i <= n)
+	
+	i = a->index_top + 1;
+	while (i)
 	{
-		j = 0;
-		while (j <= n)
-		{
-			if (j < n - i && a->array[n] > a->array[n- 1])
-				sa(a);
+		if (a->array[a->index_top] & masque)
 			ra(a);
-			j++;
-		}
-		i++;
+		else
+			pb(a,b);
+		i--;
+	}
+	i = b->index_top + 1;
+	while(i--)
+		pa(a,b);
+	i = a->index_top;
+	while (i)
+	{
+		if (a->array[i] > a->array[i - 1])
+			return (0);
+		i--;
+	}
+	return (2);
+}
+
+
+int radix(t_stack *a, t_stack *b)
+{
+	int masque;
+	int i;
+	
+	masque = 1;
+	i = 0;
+	while (i == 0)
+	{
+		i = dispach(a,b,masque);
+		masque = masque << 1;
 	}
 	return (0);
 }
