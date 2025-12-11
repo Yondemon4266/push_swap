@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   buble.c                                            :+:      :+:    :+:   */
+/*   medium.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 17:26:58 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/11 11:48:28 by mbichet          ###   ########lyon.fr   */
+/*   Created: 2025/12/10 14:04:13 by mbichet           #+#    #+#             */
+/*   Updated: 2025/12/11 11:53:15 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	buble(t_stack *a)
-{
-	int i;
-	int j;
-	int n;
+#define MAX_ITER 100
 
-	i = 0;
-	n = a->index_top;
-	while (i <= n)
-	{
-		j = 0;
-		while (j <= n)
-		{
-			if (j < n - i && a->array[n] > a->array[n- 1])
-				sa(a);
-			ra(a);
-			j++;
-		}
-		i++;
-	}
+int     ft_sqrt(int nb)
+{
+        int			i;
+        double		x;
+
+        i = 1;
+        x = 1;
+        while (nb > 0 && i++ < MAX_ITER)
+                x = 0.5 * (x + (nb / x));
+		if (((int)(x * 10))%10 == 0)
+			return(x);
+        return (x + 1);
+}
+
+int	medium(t_stack *a, t_stack *b)
+{
 	return (0);
 }
+

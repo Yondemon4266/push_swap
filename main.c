@@ -174,9 +174,9 @@ int main(int ac, char **av)
     t_stack stack_b;
     stack_a = create_stack(av, length);
     stack_b.array[0] = 1;
-    stack_b.index_top = 0;
-    insertion(&stack_a);
-    while (stack_a.index_top >= 0)
+    stack_b.index_top = -1;
+    radix(&stack_a, &stack_b);
+    while (stack_a.index_top >= 0 || stack_b.index_top >= 0)
     {
         t_stack stack_a;
         int  i;
