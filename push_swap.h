@@ -13,27 +13,34 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdio.h>
+# include "libft/libft.h"
 
 #define MAX_SIZE_ARAY 50000
 
 typedef struct s_stack
 {
 	int	index_top;
-	int	array[MAX_SIZE_ARAY];
+	int	array[MAX_SIZE_ARRAY];
 
 }	t_stack;
 
-int	pa(t_stack *a, t_stack *b);
-int	pb(t_stack *a, t_stack *b);
-int	ra(t_stack *a);
-int	rb(t_stack *b);
-int rr(t_stack *a, t_stack *b);
-int	rra(t_stack *a);
-int	rrb(t_stack *b);
-int	sa(t_stack *a);
-int	sb(t_stack *b);
-int	ss(t_stack *a, t_stack *b);
+int		pa(t_stack *a, t_stack *b);
+int		pb(t_stack *a, t_stack *b);
+int		ra(t_stack *a);
+int		rb(t_stack *b);
+int		rr(t_stack *a, t_stack *b);
+int		rra(t_stack *a);
+int		rrb(t_stack *b);
+int		rrr(t_stack *a, t_stack *b);
+int		sa(t_stack *a);
+int		sb(t_stack *b);
+int		ss(t_stack *a, t_stack *b);
+int		buble(t_stack *a);
+void	swap(int *a, int *b);
+void	ft_putstr(char *str);
 
 int	buble(t_stack *a);
 int	medium(t_stack *a, t_stack *b);

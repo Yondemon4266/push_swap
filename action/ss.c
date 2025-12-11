@@ -14,9 +14,7 @@
 
 int	ss(t_stack *a, t_stack *b)
 {
-	if (!sa(a))
-		return (0);
-	if (!rb(b))
-		return (0);
+	sa(a);
+	sb(b);
 	return (1);
 }
