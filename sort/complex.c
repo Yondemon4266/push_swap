@@ -6,29 +6,31 @@
 /*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 12:04:11 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/11 14:40:24 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2025/12/11 17:02:00 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-
-int dispach(t_stack *a, t_stack *b, int masque)
+int dispach(t_stack *a, t_stack *b, int i)
 {
-	int i;
+	int j;
+	int top;
+	int size;
 	
-	i = a->index_top + 1;
-	while (i)
+	j = 0;
+	size = a->index_top + 1;
+	while (j < size)
 	{
-		if (a->array[a->index_top] & masque)
+		top = a->array[a->index_top];
+		if (((top ^ 0x80000000) >> i) & 1)
 			ra(a);
 		else
-			pb(a,b);
-		i--;
+			pb(a, b);
+		j++;
 	}
-	i = b->index_top + 1;
-	while(i--)
-		pa(a,b);
+	while (b->index_top != -1)
+		pa(a, b);
 	i = a->index_top;
 	while (i)
 	{
@@ -39,18 +41,18 @@ int dispach(t_stack *a, t_stack *b, int masque)
 	return (2);
 }
 
-
 int radix(t_stack *a, t_stack *b)
 {
-	int masque;
-	int i;
-	
-	masque = 1;
-	i = 0;
-	while (i == 0)
-	{
-		i = dispach(a,b,masque);
-		masque = masque << 1;
-	}
-	return (0);
+    int i;
+	int j;
+    int max_bits = 20; 
+
+    i = 0;
+	j = 0;
+    while (i < max_bits && j == 0)
+    {
+		j = dispach(a,b,i);
+        i++;
+    }
+    return (0);
 }

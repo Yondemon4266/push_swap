@@ -184,8 +184,8 @@ int main(int ac, char **av)
         stack_b.array[0] = 1;
         stack_b.index_top = -1;
         stack_a = manage_input(av + i, ac - i);
-        // radix(&stack_a, &stack_b);
-        buble(&stack_a);
+        radix(&stack_a, &stack_b);
+        //buble(&stack_a);
         j = stack_a.index_top;
         while (j >= 0)
         {
