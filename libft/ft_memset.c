@@ -21,13 +21,13 @@ void	*ft_memset(void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		ucs[i] = (unsigned char) c;
+		ucs[i] = (unsigned char)c;
 		i++;
 	}
 	return (ucs);
 }
 
-/*int	main()
+/*int	main(void)
 {
 	char	tab[10] = "abcdefghij";
 	__builtin_printf("%s", (char *) ft_memset(tab, 'j', 8));

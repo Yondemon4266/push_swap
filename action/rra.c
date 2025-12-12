@@ -29,7 +29,7 @@ int	rra(t_stack *a)
 	temps = a->array[0];
 	while (i < a->index_top)
 	{
-		a->array[i] = a->array[i + 1]; 
+		a->array[i] = a->array[i + 1];
 		i++;
 	}
 	a->array[a->index_top] = temps;

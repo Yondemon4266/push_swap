@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ra.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 14:21:40 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/10 10:02:50 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2025/12/12 17:17:00 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 int	ra(t_stack *a)
 {
+	int	i;
+	int	temps;
+
 	if (!a)
 		return (0);
 	if (a->index_top <= 0)
 		return (0);
-	int i;
-	int temps;
-	
-	printf("ra\n");
 	i = a->index_top;
 	temps = a->array[a->index_top];
 	while (i > 0)
@@ -32,4 +31,3 @@ int	ra(t_stack *a)
 	a->array[0] = temps;
 	return (0);
 }
-

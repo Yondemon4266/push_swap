@@ -24,16 +24,16 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (ucs[i] == ucc)
-			return ((void *) s + i);
+			return ((void *)s + i);
 		i++;
 	}
 	return (NULL);
 }
 
 /*
-#include <string.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int	main(int ac, char **av)
 {

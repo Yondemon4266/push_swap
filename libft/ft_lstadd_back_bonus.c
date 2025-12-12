@@ -30,18 +30,18 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 int	main(void)
 {
-	   t_list *l = ((void*)0);
-        t_list *n = ft_lstnew(ft_strdup("OK"));
- 
-        ft_lstadd_back(&l, n);
-        if (l == n && !strcmp(l->content, "OK"))
-        {
-                free(l->next);
-                free(l);
-                printf("TEST_SUCCESS");
+		t_list *l = ((void*)0);
+		t_list *n = ft_lstnew(ft_strdup("OK"));
+
+		ft_lstadd_back(&l, n);
+		if (l == n && !strcmp(l->content, "OK"))
+		{
+				free(l->next);
+				free(l);
+				printf("TEST_SUCCESS");
 				return (1);
-        }
-        free(l->next);
-        free(l);
-        printf("TEST_FAILED");
+		}
+		free(l->next);
+		free(l);
+		printf("TEST_FAILED");
 }*/

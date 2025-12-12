@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = 0;
 	else if (len > ft_strlen(s + start))
 		len = ft_strlen(s + start);
-	new = (char *) malloc(len + 1);
+	new = (char *)malloc(len + 1);
 	if (!new)
 		return (NULL);
 	i = 0;
@@ -40,6 +40,7 @@ int	main(int ac, char **av)
 	if (ac == 4)
 	{
 		__builtin_printf("ft:%s\n", ft_substr(av[1], atoi(av[2]), atoi(av[3])));
-		__builtin_printf("or:%s", ft_substrnew(av[1], atoi(av[2]), atoi(av[3])));
+		__builtin_printf("or:%s", ft_substrnew(av[1], atoi(av[2]),
+				atoi(av[3])));
 	}
 }*/

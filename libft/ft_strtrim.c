@@ -52,7 +52,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	len = ft_strlen(s1);
 	begin = count_tr_len(s1, &len, set);
-	trimmed_str = (char *) malloc(sizeof(char) * (len + 1));
+	trimmed_str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!trimmed_str)
 		return (NULL);
 	trimmed_str[len] = '\0';
@@ -62,7 +62,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		trimmed_str[i] = s1[begin + i];
 		i++;
 	}
-	return ((char *) trimmed_str);
+	return ((char *)trimmed_str);
 }
 
 /*

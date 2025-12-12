@@ -31,9 +31,9 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 }
 
 /*
-#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int	main(int ac, char **av)
 {

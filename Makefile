@@ -18,10 +18,14 @@ C_FILE      = main.c \
               action/ss.c \
               sort/buble.c \
               sort/complex.c \
-              utils/swap.c
+              utils/swap.c \
+              utils/ft_plus_or_minus.c \
+              utils/ft_isspace.c \
+              parsing/parsing_utils.c \
+              parsing/manage_flags.c \
+              parsing/parsing.c
 
 O_FILE      = $(C_FILE:%.c=$(BUILDDIR)/%.o)
-
 DEPS        = $(O_FILE:%.o=%.d)
 
 all: $(NAME)

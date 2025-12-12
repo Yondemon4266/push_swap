@@ -35,8 +35,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 }
 
 /*
-#include <stdio.h>
 #include <bsd/string.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 int	main(int ac, char **av)

@@ -14,9 +14,9 @@
 
 int	buble(t_stack *a)
 {
-	int i;
-	int j;
-	int n;
+	int	i;
+	int	j;
+	int	n;
 
 	i = 0;
 	n = a->index_top;
@@ -25,7 +25,7 @@ int	buble(t_stack *a)
 		j = 0;
 		while (j <= n)
 		{
-			if (j < n - i && a->array[n] > a->array[n- 1])
+			if (j < n - i && a->array[n] > a->array[n - 1])
 				sa(a);
 			ra(a);
 			j++;

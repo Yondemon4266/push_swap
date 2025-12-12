@@ -12,23 +12,22 @@
 
 #include "../push_swap.h"
 
-
-int dispach(t_stack *a, t_stack *b, int masque)
+int	dispach(t_stack *a, t_stack *b, int masque)
 {
-	int i;
-	
+	int	i;
+
 	i = a->index_top + 1;
 	while (i)
 	{
 		if (a->array[a->index_top] & masque)
 			ra(a);
 		else
-			pb(a,b);
+			pb(a, b);
 		i--;
 	}
 	i = b->index_top + 1;
-	while(i--)
-		pa(a,b);
+	while (i--)
+		pa(a, b);
 	i = a->index_top;
 	while (i)
 	{
@@ -39,17 +38,16 @@ int dispach(t_stack *a, t_stack *b, int masque)
 	return (2);
 }
 
-
-int radix(t_stack *a, t_stack *b)
+int	radix(t_stack *a, t_stack *b)
 {
 	int masque;
 	int i;
-	
+
 	masque = 1;
 	i = 0;
 	while (i == 0)
 	{
-		i = dispach(a,b,masque);
+		i = dispach(a, b, masque);
 		masque = masque << 1;
 	}
 	return (0);
