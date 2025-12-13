@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:15:26 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/12 17:16:01 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/13 11:48:56 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	str_arrayto_int(char **str, t_stack *stack_a)
 			ft_putendl_fd("Error stack over/underflow", 2);
 			exit(EXIT_FAILURE);
 		}
-		stack_a->array[i] = nb;
+		stack_a->array[stack_a->index_top - i] = nb;
 		i++;
 	}
 }

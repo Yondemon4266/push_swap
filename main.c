@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:05:56 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/12 19:16:41 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/13 11:56:38 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ int	main(int ac, char **av)
 		disorder = compute_disorder(stack_a);
 		if (disorder == 0.00)
 			return (0);
+		// buble(&stack_a);
+		radix(&stack_a, &stack_b);
 		// int j;
 		// printf("disorder : %.2f\n", disorder);
 		// j = stack_a.index_top;
