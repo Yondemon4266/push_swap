@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:14:27 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/16 11:26:34 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/16 19:37:00 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,31 @@ void	verify_input(char **av, int ac)
 	}
 }
 
+void	ranked_array(t_stack *a)
+{
+	int	nb;
+	int	i;
+	int	j;
+	int	rank;
+
+	i = 0;
+
+	while (i <= a->index_top)
+	{
+		j = 0;
+		rank = 0;
+		nb = a->array[i];
+		while (j <= a->index_top)
+		{
+			if (nb > a->array[j])
+				rank++;
+			j++;
+		}
+		a->ranks[i] = rank;
+		i++;
+	}
+}
+
 t_stack	manage_input(char **av, int ac)
 {
 	char	*joined_str;
@@ -78,12 +103,8 @@ t_stack	manage_input(char **av, int ac)
 	stack_a.index_top = get_top_index(splitted);
 	if (stack_a.index_top == 0)
 		exit(EXIT_SUCCESS);
-	if (stack_a.index_top + 1 > MAX_SIZE_ARRAY)
-	{
-		ft_putendl_fd("Error overflow array size", 2);
-		exit(EXIT_FAILURE);
-	}
 	str_arrayto_int(splitted, &stack_a);
+	ranked_array(&stack_a);
 	is_duplicate_instack(stack_a);
 	return (stack_a);
 }

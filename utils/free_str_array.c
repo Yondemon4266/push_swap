@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   free_str_array.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 16:05:15 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/16 18:34:57 by aluslu           ###   ########.fr       */
+/*   Created: 2025/12/16 19:26:53 by aluslu            #+#    #+#             */
+/*   Updated: 2025/12/16 19:37:46 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	sa(t_stack *a)
+void    free_str_array(char **str)
 {
-	if (!a || a->index_top <= 0)
-		return (0);
-	swap(&a->array[a->index_top], &a->array[a->index_top - 1]);
-	swap(&a->ranks[a->index_top], &a->ranks[a->index_top - 1]);
-	return (1);
+    int i;
+
+    i = 0;
+    while (str[i])
+    {
+        free(str[i]);
+        i++;
+    }
+    free(str);
 }

@@ -21,6 +21,7 @@ C_FILE      = main.c \
               utils/swap.c \
               utils/ft_plus_or_minus.c \
               utils/ft_isspace.c \
+              utils/free_str_array.c\
               parsing/parsing_utils.c \
               parsing/manage_flags.c \
               parsing/parsing.c

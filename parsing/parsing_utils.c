@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:15:26 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/16 10:19:42 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/16 19:37:11 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,16 @@ void	str_arrayto_int(char **str, t_stack *stack_a)
 	int	i;
 
 	i = 0;
+	stack_a->array = (int *) malloc(sizeof(int) * (stack_a->index_top + 1));
+	stack_a->ranks = (int *) malloc(sizeof(int) * (stack_a->index_top + 1));
+	if (!stack_a->array || !stack_a->ranks)
+	{
+		free(stack_a->array);
+		free(stack_a->ranks);
+		free_str_array(str);
+		ft_putendl_fd("Error malloc stack a array or ranks", 2);
+		exit(EXIT_FAILURE);
+	}
 	while (str[i] != NULL)
 	{
 		long long nb = ft_atoi(str[i]);

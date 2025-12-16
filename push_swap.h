@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:11:29 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/16 10:59:32 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/16 19:26:46 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,11 @@
 # include <stdio.h>
 # include "libft/libft.h"
 
-#define MAX_SIZE_ARRAY 50000
-
 typedef struct s_stack
 {
 	int	index_top;
-	int	array[MAX_SIZE_ARRAY];
-
+	int	*array;
+	int *ranks;
 }	t_stack;
 
 enum e_strategy {
@@ -47,7 +45,6 @@ int		rrr(t_stack *a, t_stack *b);
 int		sa(t_stack *a);
 int		sb(t_stack *b);
 int		ss(t_stack *a, t_stack *b);
-void	swap(int *a, int *b);
 
 /* FONCTIONS D'ALGORITHME */
 
@@ -66,6 +63,8 @@ void	verify_input(char **av, int ac);
 void	str_arrayto_int(char **str, t_stack *stack_a);
 int ft_plus_or_minus(char c);
 int	ft_isspace(char c);
+void    free_str_array(char **str);
+void	swap(int *a, int *b);
 
 /* MANAGING FLAGS FUNCTIONS */
 

@@ -6,11 +6,20 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:05:56 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/16 12:25:43 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/16 19:48:55 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_stack	init_empty_stack(int size)
+{
+	t_stack stack;
+	stack.array = (int *) malloc(sizeof(int) * size);
+	stack.ranks = (int *) malloc(sizeof(int) * size);
+	stack.index_top = -1;
+	return (stack);
+}
 
 float	compute_disorder(t_stack stack_a)
 {
@@ -55,15 +64,20 @@ int	main(int ac, char **av)
             manage_flag(av[i], &strategy, &bench);
             i++;
         }
-        stack_b.array[0] = 1;
-        stack_b.index_top = -1;
 		// printf("bench: %d, flag: %d", bench, strategy);
         stack_a = manage_input(av + i, ac - i);
+		stack_b = init_empty_stack(stack_a.index_top + 1);
 		disorder = compute_disorder(stack_a);
 		if (disorder == 0.00)
 			return (0);
-        // simple(&stack_a);
+		// else if (disorder >= 0.20 && disorder < 0.50)
+		// 	medium(&stack_a, &stack_b);
+		// else if (disorder >= 0.50)
+		// 	complex(&stack_a, &stack_b);
 		complex(&stack_a, &stack_b);
+		// else if (disorder < 0.20)
+		// 
+        // simple(&stack_a);
 		// int j;
         // j = stack_a.index_top;
         // while (j >= 0)
