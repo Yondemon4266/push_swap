@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   buble.c                                            :+:      :+:    :+:   */
+/*   simple.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 17:26:58 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/13 11:50:56 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/16 12:24:52 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	buble(t_stack *a)
+int	simple(t_stack *a)
 {
 	int	i;
 	int	j;
@@ -23,7 +23,7 @@ int	buble(t_stack *a)
 	while (i <= n)
 	{
 		j = 0;
-		while (j <= n)
+		while (j <= n) 
 		{
 			if (j < n - i && a->array[n] > a->array[n - 1])
 			{

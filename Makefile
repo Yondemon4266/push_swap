@@ -16,7 +16,7 @@ C_FILE      = main.c \
               action/sa.c \
               action/sb.c \
               action/ss.c \
-              sort/buble.c \
+              sort/simple.c \
               sort/complex.c \
               utils/swap.c \
               utils/ft_plus_or_minus.c \

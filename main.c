@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:05:56 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/16 10:29:13 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/16 12:25:43 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ int	main(int ac, char **av)
 		disorder = compute_disorder(stack_a);
 		if (disorder == 0.00)
 			return (0);
-        radix(&stack_a, &stack_b);
-        // buble(&stack_a);
+        // simple(&stack_a);
+		complex(&stack_a, &stack_b);
 		// int j;
         // j = stack_a.index_top;
         // while (j >= 0)

@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:14:27 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/12 18:25:26 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/16 11:26:34 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ t_stack	manage_input(char **av, int ac)
 
 	verify_input(av, ac);
 	joined_str = join_strings(av, ac);
-	splitted = ft_split(joined_str, " ");
+	splitted = ft_split(joined_str, " \n");
 	if (!splitted)
 	{
 		free(joined_str);

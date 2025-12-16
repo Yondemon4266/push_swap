@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:11:29 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/12 19:03:58 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/16 10:59:32 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,13 @@ int		rrr(t_stack *a, t_stack *b);
 int		sa(t_stack *a);
 int		sb(t_stack *b);
 int		ss(t_stack *a, t_stack *b);
-int		buble(t_stack *a);
 void	swap(int *a, int *b);
 
 /* FONCTIONS D'ALGORITHME */
 
-int	buble(t_stack *a);
+int	simple(t_stack *a);
 int	medium(t_stack *a, t_stack *b);
-int radix(t_stack *a, t_stack *b);
+int complex(t_stack *a, t_stack *b);
 
 /* PARSING && PARSING UTILS */
 
