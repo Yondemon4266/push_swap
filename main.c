@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:05:56 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/16 10:20:33 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/16 10:29:13 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,16 @@ int	main(int ac, char **av)
 		int	bench;
 		
         i = 1;
-        if (ft_strncmp(av[i], "--", 2) == 0 && is_valid_flag(av[i]))
+        while (ft_strncmp(av[i], "--", 2) == 0 && is_valid_flag(av[i]))
         {
             manage_flag(av[i], &strategy, &bench);
             i++;
         }
         stack_b.array[0] = 1;
         stack_b.index_top = -1;
+		// printf("bench: %d, flag: %d", bench, strategy);
         stack_a = manage_input(av + i, ac - i);
 		disorder = compute_disorder(stack_a);
-		// printf("disorder: %.2f\n", disorder);
 		if (disorder == 0.00)
 			return (0);
         radix(&stack_a, &stack_b);
