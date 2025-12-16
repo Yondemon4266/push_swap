@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:05:56 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/16 09:58:30 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/16 10:20:33 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ float	compute_disorder(t_stack stack_a)
 		while (j <= stack_a.index_top)
 		{
 			total_pairs += 1;
-			if (stack_a.array[i] > stack_a.array[j])
+			if (stack_a.array[i] < stack_a.array[j])
 				mistakes += 1;
 			j++;
 		}
@@ -48,23 +48,28 @@ int	main(int ac, char **av)
 		float	disorder;
 		enum e_strategy strategy;
 		int	bench;
-
+		
         i = 1;
         if (ft_strncmp(av[i], "--", 2) == 0 && is_valid_flag(av[i]))
         {
-            manage_flag(av[i]);
+            manage_flag(av[i], &strategy, &bench);
             i++;
         }
         stack_b.array[0] = 1;
         stack_b.index_top = -1;
         stack_a = manage_input(av + i, ac - i);
-        // radix(&stack_a, &stack_b);
-        buble(&stack_a);
-        j = stack_a.index_top;
-        while (j >= 0)
-        {
-            printf("%d\n", stack_a.array[j]);
-            j--;
-        }
+		disorder = compute_disorder(stack_a);
+		// printf("disorder: %.2f\n", disorder);
+		if (disorder == 0.00)
+			return (0);
+        radix(&stack_a, &stack_b);
+        // buble(&stack_a);
+		// int j;
+        // j = stack_a.index_top;
+        // while (j >= 0)
+        // {
+        //     printf("%d\n", stack_a.array[j]);
+        //     j--;
+        // }
     }
 }
