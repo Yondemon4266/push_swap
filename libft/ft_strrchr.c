@@ -24,15 +24,15 @@ char	*ft_strrchr(const char *s, int c)
 	while (i > 0)
 	{
 		i--;
-		if ((unsigned char)s[i] == (unsigned char) c)
-			return ((char *) s + i);
+		if ((unsigned char)s[i] == (unsigned char)c)
+			return ((char *)s + i);
 	}
 	return (NULL);
 }
 
 /*
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
 int	main(int ac, char **av)
 {

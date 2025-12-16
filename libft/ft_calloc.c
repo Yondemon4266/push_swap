@@ -41,5 +41,5 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		ptr = ft_calloc(ft_atoi(av[1]), ft_atoi(av[2]));
 		free(ptr);
 	}
-	
+
 }*/

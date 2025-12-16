@@ -59,7 +59,7 @@ char	*ft_itoa(int n)
 		n = -n;
 	}
 	nbr_len = count_nbr_len(n) + is_negative;
-	res = (char *) malloc(sizeof(char) * (nbr_len + 1));
+	res = (char *)malloc(sizeof(char) * (nbr_len + 1));
 	if (!res)
 		return (NULL);
 	fill_edges(res, nbr_len, is_negative);

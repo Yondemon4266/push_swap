@@ -28,7 +28,8 @@ void	ft_bzero(void *s, size_t n)
 
 /*
 #include <bsd/string.h>
-int	main()
+
+int	main(void)
 {
 	char tab[5] = "hello";
 	char tab2[5] = "hello";

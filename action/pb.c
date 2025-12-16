@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 14:13:24 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/11 12:37:14 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2025/12/12 17:16:59 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	pb(t_stack *a, t_stack *b)
 {
-	printf("pb\n");
 	b->index_top += 1;
 	b->array[b->index_top] = a->array[a->index_top];
 	a->index_top -= 1;

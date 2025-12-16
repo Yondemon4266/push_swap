@@ -35,6 +35,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 #include <bsd/string.h>
 #include <stdio.h>
 #include <stdlib.h>
+
 int	main(int ac, char **av)
 {
 	char	*tab;

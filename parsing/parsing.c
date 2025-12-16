@@ -1,0 +1,89 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/11 17:14:27 by aluslu            #+#    #+#             */
+/*   Updated: 2025/12/12 18:25:26 by aluslu           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../push_swap.h"
+
+
+void	is_duplicate_instack(t_stack stack_a)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < stack_a.index_top)
+	{
+		j = i + 1;
+		while (j <= stack_a.index_top)
+		{
+			if (stack_a.array[i] == stack_a.array[j])
+			{
+				ft_putendl_fd("Error duplicate", 2);
+				exit(EXIT_FAILURE);
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
+void	verify_input(char **av, int ac)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < ac)
+	{
+		j = 0;
+		while (av[i][j])
+		{
+			if (ft_isdigit(av[i][j]) || ft_isspace(av[i][j]) 
+				|| (ft_plus_or_minus(av[i][j])
+				&& ft_isdigit(av[i][j + 1])))
+				j++;
+			else
+			{
+				ft_putendl_fd("Error input incorrect", 2);
+				exit(EXIT_FAILURE);
+			}
+		}
+		i++;
+	}
+}
+
+t_stack	manage_input(char **av, int ac)
+{
+	char	*joined_str;
+	char	**splitted;
+	t_stack	stack_a;
+
+	verify_input(av, ac);
+	joined_str = join_strings(av, ac);
+	splitted = ft_split(joined_str, " ");
+	if (!splitted)
+	{
+		free(joined_str);
+		ft_putendl_fd("Error on split", 2);
+		exit(EXIT_FAILURE);
+	}
+	stack_a.index_top = get_top_index(splitted);
+	if (stack_a.index_top == 0)
+		exit(EXIT_SUCCESS);
+	if (stack_a.index_top + 1 > MAX_SIZE_ARRAY)
+	{
+		ft_putendl_fd("Error overflow array size", 2);
+		exit(EXIT_FAILURE);
+	}
+	str_arrayto_int(splitted, &stack_a);
+	is_duplicate_instack(stack_a);
+	return (stack_a);
+}

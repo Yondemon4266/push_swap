@@ -29,16 +29,16 @@ t_list	*ft_lstlast(t_list *lst)
 int	main(void)
 {
 	t_list *l;
- 	t_list *expected;
- 	t_list *actual;
- 
- 	l = ft_lstnew(ft_strdup("1"));
- 	l->next = ft_lstnew(ft_strdup("2"));
- 	l->next->next = ft_lstnew(ft_strdup("3"));
- 	expected = l->next->next;
- 	actual = ft_lstlast(l);
- 	if (actual == expected)
- 		printf("TEST_SUCCESS");
+	t_list *expected;
+	t_list *actual;
+
+	l = ft_lstnew(ft_strdup("1"));
+	l->next = ft_lstnew(ft_strdup("2"));
+	l->next->next = ft_lstnew(ft_strdup("3"));
+	expected = l->next->next;
+	actual = ft_lstlast(l);
+	if (actual == expected)
+		printf("TEST_SUCCESS");
 	else
 		printf("TEST_FAILED");
 }*/

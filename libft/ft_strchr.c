@@ -29,8 +29,9 @@ char	*ft_strchr(const char *s, int c)
 }
 
 /*#include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
+
 int	main(int ac, char **av)
 {
 	if (ac == 3)
