@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rrb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:22:45 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/09 15:23:32 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2025/12/17 11:22:21 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	rrb(t_stack *b)
 {
 	if (!b)
-		return (0);
+		return (1);
 	if (b->index_top <= 0)
-		return (0);
+		return (1);
 	int i;
 	int temps;
 	if (b->index_top == 1)
@@ -33,5 +33,5 @@ int	rrb(t_stack *b)
 		i--;
 	}
 	b->array[b->index_top] = temps;
-	return (0);
+	return (1);
 }

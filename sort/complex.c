@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 10:41:04 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/17 10:42:43 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/17 11:20:41 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	count_binary_size(int nb)
 	return (count);
 }
 
-int complex(t_stack *a, t_stack *b)
+int complex(t_stack *a, t_stack *b, t_bench_infos *infos)
 {
 	int size;
     int i;
@@ -43,13 +43,13 @@ int complex(t_stack *a, t_stack *b)
 		while (j <= limit)
 		{
 			if (!((a->ranks[a->index_top] >> i) & 1))
-				pb(a, b);
+				infos->pb_count += pb(a, b);
 			else
-				ra(a);
+				infos->ra_count += ra(a);
 			j++;
 		}
 		while (b->index_top != -1)
-			pa(a, b);
+			infos->pa_count += pa(a, b);
         i++;
     }
     return (0);

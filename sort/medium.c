@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 10:35:07 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/17 10:40:03 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/17 11:29:09 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,14 +89,14 @@ static int dispach_medium(t_stack *a, t_stack *b,int max ,int sum)
 }
 
 
-int    medium(t_stack *a, t_stack *b)
+int    medium(t_stack *a, t_stack *b, t_bench_infos *infos)
 {
     int nb_bucket;
     int max;
     int min;
     int sum;
     int j;
-
+    infos->pa_count++;
     j = 1;
     sum = get_min_max(&nb_bucket,&max,&min,a);
     while(j <= nb_bucket)

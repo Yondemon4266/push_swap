@@ -6,13 +6,32 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:05:56 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/17 10:42:57 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/17 11:32:29 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	init_empty_stack(int size)
+static void	init_bench_infos(t_bench_infos *infos)
+{
+	infos->disorder = 0.00;
+	infos->strategy = ADAPTIVE;
+	infos->bench = 0;
+	infos->total_ops = 0;
+	infos->sa_count = 0;
+	infos->sb_count = 0;
+	infos->ss_count = 0;
+	infos->pa_count = 0;
+	infos->pb_count = 0;
+	infos->ra_count = 0;
+	infos->rb_count = 0;
+	infos->rr_count = 0;
+	infos->rra_count = 0;
+	infos->rrb_count = 0;
+	infos->rrr_count = 0;
+}
+
+static t_stack	init_empty_stack(int size)
 {
 	t_stack stack;
 	stack.array = (int *) malloc(sizeof(int) * size);
@@ -21,7 +40,7 @@ t_stack	init_empty_stack(int size)
 	return (stack);
 }
 
-float	compute_disorder(t_stack stack_a)
+static float	compute_disorder(t_stack stack_a)
 {
 	float mistakes;
 	float	total_pairs;
@@ -54,36 +73,31 @@ int	main(int ac, char **av)
 		int i;
 		t_stack stack_a;
 		t_stack stack_b;
-		float	disorder;
-		enum e_strategy strategy;
-		int	bench;
-		
+		t_bench_infos infos;
+
+		init_bench_infos(&infos);
         i = 1;
         while (ft_strncmp(av[i], "--", 2) == 0 && is_valid_flag(av[i]))
-        {
-            manage_flag(av[i], &strategy, &bench);
-            i++;
-        }
-		// printf("bench: %d, flag: %d", bench, strategy);
+            manage_flag(av[i++], &infos.strategy, &infos.bench);
         stack_a = manage_input(av + i, ac - i);
 		stack_b = init_empty_stack(stack_a.index_top + 1);
-		disorder = compute_disorder(stack_a);
-		if (disorder == 0.00)
+		infos.disorder = compute_disorder(stack_a);
+		if (infos.disorder == 0.00)
 			return (0);
-		// else if (disorder >= 0.20 && disorder < 0.50)
+		// display_bench(&infos);
+		// else if (infos.disorder < 0.20)
+		// 	simple(&stack_a);
+		// else if (infos.disorder < 0.50 && infos.disorder >= 0.20)
 		// 	medium(&stack_a, &stack_b);
-		// else if (disorder >= 0.50)
-		// 	complex(&stack_a, &stack_b);
-		medium(&stack_a, &stack_b);
-		// else if (disorder < 0.20)
-		// 
-        // simple(&stack_a);
-		// int j;
-        // j = stack_a.index_top;
-        // while (j >= 0)
-        // {
-        //     printf("%d\n", stack_a.array[j]);
-        //     j--;
-        // }
+		// else
+		medium(&stack_a, &stack_b, &infos);
+		// complex(&stack_a, &stack_b);
+		int j;
+        j = stack_a.index_top;
+        while (j >= 0)
+        {
+            printf("%d\n", stack_a.array[j]);
+            j--;
+        }
     }
 }

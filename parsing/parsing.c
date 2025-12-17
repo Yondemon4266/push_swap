@@ -6,14 +6,14 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:14:27 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/16 19:37:00 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/17 11:09:55 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 
-void	is_duplicate_instack(t_stack stack_a)
+static void	is_duplicate_instack(t_stack stack_a)
 {
 	int	i;
 	int	j;
@@ -35,7 +35,7 @@ void	is_duplicate_instack(t_stack stack_a)
 	}
 }
 
-void	verify_input(char **av, int ac)
+static void	verify_input(char **av, int ac)
 {
 	int	i;
 	int	j;
@@ -60,7 +60,7 @@ void	verify_input(char **av, int ac)
 	}
 }
 
-void	ranked_array(t_stack *a)
+static void	ranked_array(t_stack *a)
 {
 	int	nb;
 	int	i;

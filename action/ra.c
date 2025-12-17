@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 14:21:40 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/17 10:37:13 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/17 11:21:33 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int	ra(t_stack *a)
 	
 	ft_putendl_fd("ra", 1);
 	if (!a)
-		return (0);
+		return (1);
 	if (a->index_top <= 0)
-		return (0);
+		return (1);
 	i = a->index_top;
 	temps = a->array[a->index_top];
 	temps_rank = a->ranks[a->index_top];
@@ -34,5 +34,5 @@ int	ra(t_stack *a)
 	}
 	a->array[0] = temps;
 	a->ranks[0] = temps_rank;
-	return (0);
+	return (1);
 }

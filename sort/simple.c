@@ -6,13 +6,13 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 17:26:58 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/17 10:41:16 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/17 11:24:01 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	simple(t_stack *a)
+int	simple(t_stack *a, t_bench_infos *infos)
 {
 	int	i;
 	int	j;
@@ -26,8 +26,8 @@ int	simple(t_stack *a)
 		while (j <= n) 
 		{
 			if (j < n - i && a->array[n] > a->array[n - 1])
-				sa(a);
-			ra(a);
+				infos->sa_count += sa(a);
+			infos->ra_count = ra(a);
 			j++;
 		}
 		i++;
