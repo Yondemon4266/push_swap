@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:05:56 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/16 19:48:55 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/17 10:42:57 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	main(int ac, char **av)
 		// 	medium(&stack_a, &stack_b);
 		// else if (disorder >= 0.50)
 		// 	complex(&stack_a, &stack_b);
-		complex(&stack_a, &stack_b);
+		medium(&stack_a, &stack_b);
 		// else if (disorder < 0.20)
 		// 
         // simple(&stack_a);

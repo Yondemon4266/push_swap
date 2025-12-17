@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 16:05:15 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/16 18:34:57 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/17 10:39:16 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	sa(t_stack *a)
 {
+	ft_putendl_fd("sa", 1);
 	if (!a || a->index_top <= 0)
 		return (0);
 	swap(&a->array[a->index_top], &a->array[a->index_top - 1]);

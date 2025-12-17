@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rrr.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:26:37 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/09 15:32:41 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2025/12/17 10:39:10 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	rrr(t_stack *a, t_stack *b)
 {
+	ft_putendl_fd("rrr", 1);
 	rra(a);
 	rrb(b);
 	return (1);

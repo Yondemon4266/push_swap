@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 17:26:58 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/16 12:24:52 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/17 10:41:16 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,8 @@ int	simple(t_stack *a)
 		while (j <= n) 
 		{
 			if (j < n - i && a->array[n] > a->array[n - 1])
-			{
 				sa(a);
-				printf("sa\n");
-			}
 			ra(a);
-			printf("ra\n");
 			j++;
 		}
 		i++;

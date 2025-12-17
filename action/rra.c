@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rra.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:10:18 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/09 15:18:48 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2025/12/17 10:38:32 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	rra(t_stack *a)
 {
+	ft_putendl_fd("rra", 1);
 	if (!a)
 		return (0);
 	if (a->index_top <= 0)

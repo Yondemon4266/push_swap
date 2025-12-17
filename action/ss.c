@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ss.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 16:12:48 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/10 09:52:30 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2025/12/17 10:39:32 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	ss(t_stack *a, t_stack *b)
 {
+	ft_putendl_fd("ss", 1);
 	sa(a);
 	sb(b);
 	return (1);
