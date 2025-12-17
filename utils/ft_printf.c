@@ -14,7 +14,7 @@
 
 static int	is_valid_format(char c)
 {
-	ssize_t		i;	
+	ssize_t		i;
 	const char	format[10] = "cspdiuxX%";
 
 	i = 0;
@@ -47,9 +47,9 @@ static void	treat_format(char c, va_list arguments, int *count)
 
 int	ft_printf(const char *str, ...)
 {
-	va_list		arguments;
-	ssize_t		i;
-	int			count;
+	va_list	arguments;
+	ssize_t	i;
+	int		count;
 
 	if (!str)
 		return (0);

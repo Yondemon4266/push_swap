@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:07:09 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/17 14:03:59 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/17 19:53:56 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	rb(t_stack *b)
 {
 	int	i;
 	int	temps;
-	int temps_rank;
-	
+	int	temps_rank;
+
 	ft_putendl_fd("rb", 1);
 	if (!b)
 		return (1);

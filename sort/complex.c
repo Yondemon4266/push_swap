@@ -29,17 +29,17 @@ static int	count_binary_size(int nb)
 
 void	complex(t_stack *a, t_stack *b, t_bench_infos *infos)
 {
-	int size;
-    int i;
-    int j;
+	int	size;
+	int	i;
+	int	j;
 	int	limit;
-	
+
 	limit = a->index_top;
 	size = count_binary_size(a->index_top);
-    i = 0;
-    while (i < size)
-    {
-        j = 0;
+	i = 0;
+	while (i < size)
+	{
+		j = 0;
 		while (j <= limit)
 		{
 			if (!((a->ranks[a->index_top] >> i) & 1))
@@ -50,7 +50,6 @@ void	complex(t_stack *a, t_stack *b, t_bench_infos *infos)
 		}
 		while (b->index_top != -1)
 			infos->pa_count += pa(a, b);
-        i++;
-    }
+		i++;
+	}
 }
-

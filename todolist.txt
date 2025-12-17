@@ -8,4 +8,4 @@ tout en rendant le code modulaire et norminette).
 vise excellent ! --> OK FAIT
 Possibilite d'utiliser algos custom pour --adaptive, bench
 -Faire le --bench OK FAIT
--Norminette... A FAIRE
+-Norminette... A FAIRE (main.c et LIBFT deja fait !)

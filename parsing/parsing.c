@@ -12,7 +12,6 @@
 
 #include "../push_swap.h"
 
-
 static void	is_duplicate_instack(t_stack stack_a)
 {
 	int	i;
@@ -46,9 +45,8 @@ static void	verify_input(char **av, int ac)
 		j = 0;
 		while (av[i][j])
 		{
-			if (ft_isdigit(av[i][j]) || ft_isspace(av[i][j]) 
-				|| (ft_plus_or_minus(av[i][j])
-				&& ft_isdigit(av[i][j + 1])))
+			if (ft_isdigit(av[i][j]) || ft_isspace(av[i][j])
+				|| (ft_plus_or_minus(av[i][j]) && ft_isdigit(av[i][j + 1])))
 				j++;
 			else
 			{
@@ -68,7 +66,6 @@ static void	ranked_array(t_stack *a)
 	int	rank;
 
 	i = 0;
-
 	while (i <= a->index_top)
 	{
 		j = 0;
@@ -87,9 +84,9 @@ static void	ranked_array(t_stack *a)
 
 t_stack	manage_input(char **av, int ac)
 {
-	char	*joined_str;
-	char	**splitted;
-	t_stack	stack_a;
+	char *joined_str;
+	char **splitted;
+	t_stack stack_a;
 
 	verify_input(av, ac);
 	joined_str = join_strings(av, ac);

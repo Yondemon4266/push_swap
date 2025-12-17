@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:05:56 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/17 19:36:33 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/17 19:52:22 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,10 @@ static void	init_bench_infos(t_bench_infos *infos)
 
 static t_stack	init_empty_stack(int size)
 {
-	t_stack stack;
-	stack.array = (int *) malloc(sizeof(int) * size);
-	stack.ranks = (int *) malloc(sizeof(int) * size);
+	t_stack	stack;
+
+	stack.array = (int *)malloc(sizeof(int) * size);
+	stack.ranks = (int *)malloc(sizeof(int) * size);
 	stack.index_top = -1;
 	return (stack);
 }
@@ -44,8 +45,8 @@ static float	compute_disorder(t_stack stack_a)
 {
 	float	mistakes;
 	float	total_pairs;
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	mistakes = 0;
 	total_pairs = 0;
@@ -66,14 +67,14 @@ static float	compute_disorder(t_stack stack_a)
 	return (mistakes / total_pairs);
 }
 
-void static choosing_sort_function(t_bench_infos *infos, t_stack *a, t_stack *b)
+void static	choosing_sort_function(t_bench_infos *infos, t_stack *a, t_stack *b)
 {
 	if (infos->disorder == 0)
 		return ;
 	else if (infos->strategy == ADAPTIVE && (infos->disorder < 0.20))
 		simple(a, infos);
-	else if (infos->strategy == ADAPTIVE && (infos->disorder >= 0.20 
-		&& infos->disorder < 0.50))
+	else if (infos->strategy == ADAPTIVE && (infos->disorder >= 0.20
+			&& infos->disorder < 0.50))
 		medium(a, b, infos);
 	else if (infos->strategy == ADAPTIVE && (infos->disorder >= 0.50))
 		complex(a, b, infos);
@@ -87,29 +88,22 @@ void static choosing_sort_function(t_bench_infos *infos, t_stack *a, t_stack *b)
 
 int	main(int ac, char **av)
 {
+	int				i;
+	t_bench_infos	infos;
+	t_stack			stack_a;
+	t_stack			stack_b;
+
 	if (ac >= 2)
 	{
-		int i;
-		t_stack stack_a;
-		t_stack stack_b;
-		t_bench_infos infos;
-
 		init_bench_infos(&infos);
-        i = 1;
-        while (ft_strncmp(av[i], "--", 2) == 0 && is_valid_flag(av[i]))
-            manage_flag(av[i++], &infos.strategy, &infos.bench);
-        stack_a = manage_input(av + i, ac - i);
+		i = 1;
+		while (ft_strncmp(av[i], "--", 2) == 0 && is_valid_flag(av[i]))
+			manage_flag(av[i++], &infos.strategy, &infos.bench);
+		stack_a = manage_input(av + i, ac - i);
 		stack_b = init_empty_stack(stack_a.index_top + 1);
 		infos.disorder = compute_disorder(stack_a);
 		choosing_sort_function(&infos, &stack_a, &stack_b);
-		// int j;
-        // j = stack_a.index_top;
-        // while (j >= 0)
-        // {
-        //     __builtin_printf("%d\n", stack_a.array[j]);
-        //     j--;
-        // }
 		if (infos.bench == 1)
 			display_bench(infos);
-    }
+	}
 }

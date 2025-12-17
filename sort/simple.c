@@ -23,7 +23,7 @@ void	simple(t_stack *a, t_bench_infos *infos)
 	while (i <= n)
 	{
 		j = 0;
-		while (j <= n) 
+		while (j <= n)
 		{
 			if (j < n - i && a->array[n] > a->array[n - 1])
 				infos->sa_count += sa(a);

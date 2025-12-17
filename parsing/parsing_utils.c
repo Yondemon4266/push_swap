@@ -81,11 +81,12 @@ char	*join_strings(char **av, int ac)
 
 void	str_arrayto_int(char **str, t_stack *stack_a)
 {
-	int	i;
+	int			i;
+	long long	nb;
 
 	i = 0;
-	stack_a->array = (int *) malloc(sizeof(int) * (stack_a->index_top + 1));
-	stack_a->ranks = (int *) malloc(sizeof(int) * (stack_a->index_top + 1));
+	stack_a->array = (int *)malloc(sizeof(int) * (stack_a->index_top + 1));
+	stack_a->ranks = (int *)malloc(sizeof(int) * (stack_a->index_top + 1));
 	if (!stack_a->array || !stack_a->ranks)
 	{
 		free(stack_a->array);
@@ -96,7 +97,7 @@ void	str_arrayto_int(char **str, t_stack *stack_a)
 	}
 	while (str[i] != NULL)
 	{
-		long long nb = ft_atoi(str[i]);
+		nb = ft_atoi(str[i]);
 		if (nb > INT_MAX || nb < INT_MIN)
 		{
 			ft_putendl_fd("Error stack over/underflow", 2);
@@ -106,6 +107,3 @@ void	str_arrayto_int(char **str, t_stack *stack_a)
 		i++;
 	}
 }
-
-
-

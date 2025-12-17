@@ -20,8 +20,8 @@ static int	ft_isspace(char c)
 long	ft_atoi(const char *nptr)
 {
 	long	result;
-	int	sign;
-	int	position;
+	int		sign;
+	int		position;
 
 	result = 0;
 	sign = 1;

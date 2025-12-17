@@ -16,8 +16,8 @@ int	ra(t_stack *a)
 {
 	int	i;
 	int	temps;
-	int temps_rank;
-	
+	int	temps_rank;
+
 	ft_putendl_fd("ra", 1);
 	if (!a)
 		return (1);

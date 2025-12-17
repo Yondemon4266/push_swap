@@ -21,7 +21,7 @@ int	rrb(t_stack *b)
 		return (1);
 	int i;
 	int temps;
-	int	temps_rank;
+	int temps_rank;
 	if (b->index_top == 1)
 	{
 		swap(&b->array[1], &b->array[0]);

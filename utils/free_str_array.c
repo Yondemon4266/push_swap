@@ -12,15 +12,15 @@
 
 #include "../push_swap.h"
 
-void    free_str_array(char **str)
+void	free_str_array(char **str)
 {
-    int i;
+	int i;
 
-    i = 0;
-    while (str[i])
-    {
-        free(str[i]);
-        i++;
-    }
-    free(str);
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
 }

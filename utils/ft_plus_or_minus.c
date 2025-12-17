@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_plus_or_minus(char c)
+int	ft_plus_or_minus(char c)
 {
-    if (c == '-' || c == '+')
-        return (1);
-    return (0);
+	if (c == '-' || c == '+')
+		return (1);
+	return (0);
 }
