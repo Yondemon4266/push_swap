@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:11:29 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/17 11:24:27 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/17 14:06:53 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,10 +83,26 @@ int ft_plus_or_minus(char c);
 int	ft_isspace(char c);
 void    free_str_array(char **str);
 void	swap(int *a, int *b);
+char    *ft_strcpy(char *dest, const char *src);
+
+/* FT_PRINTF */
+
+int	ft_printf(const char *str, ...);
+int	ft_putcharl(int c);
+int	ft_putstrl(char *s);
+int	ft_putnbrl(int nb);
+int	ft_unsigned_putnbrl(unsigned int nb);
+int	ft_putnbrl_hexa(uintptr_t nb, char c);
+int	ft_print_pointer(void *ptr);
+char	*ft_strcpy(char *dest, const char *src);
 
 /* MANAGING FLAGS FUNCTIONS */
 
 int	is_valid_flag(char *flag);
 void	manage_flag(char *flag, enum e_strategy *strategy, int *bench);
+
+/* DISPLAY INFOS */
+
+void    display_bench(t_bench_infos infos);
 
 #endif

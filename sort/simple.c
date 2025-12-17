@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 17:26:58 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/17 11:24:01 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/17 14:04:54 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	simple(t_stack *a, t_bench_infos *infos)
 		{
 			if (j < n - i && a->array[n] > a->array[n - 1])
 				infos->sa_count += sa(a);
-			infos->ra_count = ra(a);
+			infos->ra_count += ra(a);
 			j++;
 		}
 		i++;

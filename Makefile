@@ -23,6 +23,9 @@ C_FILE      = main.c \
               utils/ft_plus_or_minus.c \
               utils/ft_isspace.c \
               utils/free_str_array.c \
+              utils/ft_printf_utils_last.c \
+              utils/ft_printf_utils.c \
+              utils/ft_printf.c \
               utils/display_bench.c \
               parsing/parsing_utils.c \
               parsing/manage_flags.c \

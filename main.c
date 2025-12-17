@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:05:56 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/17 11:32:29 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/17 13:56:36 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static t_stack	init_empty_stack(int size)
 
 static float	compute_disorder(t_stack stack_a)
 {
-	float mistakes;
+	float	mistakes;
 	float	total_pairs;
 	int	i;
 	int	j;
@@ -66,6 +66,25 @@ static float	compute_disorder(t_stack stack_a)
 	return (mistakes / total_pairs);
 }
 
+void static choosing_sort_function(t_bench_infos *infos, t_stack *a, t_stack *b)
+{
+	if (infos->disorder == 0)
+		return ;
+	else if (infos->strategy == ADAPTIVE && (infos->disorder < 0.20))
+		simple(a, infos);
+	else if (infos->strategy == ADAPTIVE && (infos->disorder >= 0.20 
+		&& infos->disorder < 0.50))
+		medium(a, b, infos);
+	else if (infos->strategy == ADAPTIVE && (infos->disorder >= 0.50))
+		complex(a, b, infos);
+	else if (infos->strategy == SIMPLE)
+		simple(a, infos);
+	else if (infos->strategy == MEDIUM)
+		medium(a, b, infos);
+	else if (infos->strategy == COMPLEX)
+		complex(a, b, infos);
+}
+
 int	main(int ac, char **av)
 {
 	if (ac >= 2)
@@ -82,22 +101,15 @@ int	main(int ac, char **av)
         stack_a = manage_input(av + i, ac - i);
 		stack_b = init_empty_stack(stack_a.index_top + 1);
 		infos.disorder = compute_disorder(stack_a);
-		if (infos.disorder == 0.00)
-			return (0);
-		// display_bench(&infos);
-		// else if (infos.disorder < 0.20)
-		// 	simple(&stack_a);
-		// else if (infos.disorder < 0.50 && infos.disorder >= 0.20)
-		// 	medium(&stack_a, &stack_b);
-		// else
-		medium(&stack_a, &stack_b, &infos);
-		// complex(&stack_a, &stack_b);
-		int j;
-        j = stack_a.index_top;
-        while (j >= 0)
-        {
-            printf("%d\n", stack_a.array[j]);
-            j--;
-        }
+		choosing_sort_function(&infos, &stack_a, &stack_b);
+		// int j;
+        // j = stack_a.index_top;
+        // while (j >= 0)
+        // {
+        //     ft_printf("%d\n", stack_a.array[j]);
+        //     j--;
+        // }
+		if (infos.bench == 1)
+			display_bench(infos);
     }
 }

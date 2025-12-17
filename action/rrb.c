@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:22:45 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/17 11:22:21 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/17 14:03:41 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	rrb(t_stack *b)
 {
+	ft_putendl_fd("rrb", 1);
 	if (!b)
 		return (1);
 	if (b->index_top <= 0)

@@ -1,23 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sb.c                                               :+:      :+:    :+:   */
+/*   ft_printf_utils_last.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 16:11:51 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/17 14:03:22 by aluslu           ###   ########.fr       */
+/*   Created: 2025/11/20 16:27:25 by aluslu            #+#    #+#             */
+/*   Updated: 2025/12/17 12:51:28 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	sb(t_stack *b)
+int	ft_print_pointer(void *ptr)
 {
-	ft_putendl_fd("sb", 1);
-	if (!b || b->index_top <= 0)
-		return (1);
-	swap(&b->array[b->index_top], &b->array[b->index_top - 1]);
-	swap(&b->ranks[b->index_top], &b->ranks[b->index_top - 1]);
-	return (1);
+	int	count;
+
+	count = 0;
+	if (!ptr)
+	{
+		count += ft_putstrl("(nil)");
+		return (count);
+	}
+	count += ft_putstrl("0x");
+	count += ft_putnbrl_hexa((uintptr_t)ptr, 'x');
+	return (count);
+}
+
+char	*ft_strcpy(char *dest, const char *src)
+{
+	int	i;
+
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 10:35:07 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/17 11:29:09 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/17 14:11:26 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static int sort_b(t_stack *b)
     return (0);
 }
 
-static int dispach_medium(t_stack *a, t_stack *b,int max ,int sum)
+static int dispach_medium(t_stack *a, t_stack *b,int max ,int sum, t_bench_infos *infos)
 {
     int top;
     int i;
@@ -77,14 +77,14 @@ static int dispach_medium(t_stack *a, t_stack *b,int max ,int sum)
     while(i <= top)
     {
         if (max >= a->array[a->index_top] && max - sum <= a->array[a->index_top])
-            pb(a,b);
+            infos->pb_count += pb(a,b);
         else
-            ra(a);
+            infos->ra_count += ra(a);
         i++;
     }
     sort_b(b);
     while (b->index_top != -1)
-        pa(a,b);
+        infos->pa_count += pa(a,b);
     return (0);
 }
 
@@ -96,12 +96,11 @@ int    medium(t_stack *a, t_stack *b, t_bench_infos *infos)
     int min;
     int sum;
     int j;
-    infos->pa_count++;
     j = 1;
     sum = get_min_max(&nb_bucket,&max,&min,a);
     while(j <= nb_bucket)
     {
-        dispach_medium(a,b,max,sum);
+        dispach_medium(a,b,max,sum, infos);
         max -= sum;
         j++;
     }
