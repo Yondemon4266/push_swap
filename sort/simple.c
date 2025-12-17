@@ -6,13 +6,13 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 17:26:58 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/17 14:04:54 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/17 17:26:45 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	simple(t_stack *a, t_bench_infos *infos)
+void	simple(t_stack *a, t_bench_infos *infos)
 {
 	int	i;
 	int	j;
@@ -32,5 +32,4 @@ int	simple(t_stack *a, t_bench_infos *infos)
 		}
 		i++;
 	}
-	return (0);
 }

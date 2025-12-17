@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:05:56 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/17 13:56:36 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/17 19:36:33 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ int	main(int ac, char **av)
         // j = stack_a.index_top;
         // while (j >= 0)
         // {
-        //     ft_printf("%d\n", stack_a.array[j]);
+        //     __builtin_printf("%d\n", stack_a.array[j]);
         //     j--;
         // }
 		if (infos.bench == 1)

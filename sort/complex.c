@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 10:41:04 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/17 14:11:41 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/17 17:26:27 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	count_binary_size(int nb)
 	return (count);
 }
 
-int complex(t_stack *a, t_stack *b, t_bench_infos *infos)
+void	complex(t_stack *a, t_stack *b, t_bench_infos *infos)
 {
 	int size;
     int i;
@@ -52,6 +52,5 @@ int complex(t_stack *a, t_stack *b, t_bench_infos *infos)
 			infos->pa_count += pa(a, b);
         i++;
     }
-    return (0);
 }
 

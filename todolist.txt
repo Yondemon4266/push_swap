@@ -1,11 +1,11 @@
--Faire l'algo medium (check celui de Mathis)
--Check l'algo complex
--Gerer les frees des mallocs :
+-Faire l'algo medium (check celui de Mathis) -->OK FAIT
+-Check l'algo complex --> OK FAIT
+-Gerer les frees des mallocs : A FAIRE
 (suivre tout la chaine du debut a la fin,
 tout en rendant le code modulaire et norminette).
--Respecter la consigne (*.c *.h ou laisser les dossiers?)
+-Respecter la consigne (*.c *.h ou laisser les dossiers?) A DECIDER
 -Faire le --adaptive afin de respecter les BENCHMARKS-
-vise excellent !
+vise excellent ! --> OK FAIT
 Possibilite d'utiliser algos custom pour --adaptive, bench
--Faire le --bench
--Norminette...
+-Faire le --bench OK FAIT
+-Norminette... A FAIRE

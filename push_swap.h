@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:11:29 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/17 14:06:53 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/17 17:40:51 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
+# include <stdarg.h>
 # include "libft/libft.h"
 
 typedef struct s_stack
@@ -67,9 +67,9 @@ int		ss(t_stack *a, t_stack *b);
 
 /* FONCTIONS D'ALGORITHME */
 
-int	simple(t_stack *a, t_bench_infos *infos);
-int	medium(t_stack *a, t_stack *b, t_bench_infos *infos);
-int complex(t_stack *a, t_stack *b, t_bench_infos *infos);
+void	simple(t_stack *a, t_bench_infos *infos);
+void	medium(t_stack *a, t_stack *b, t_bench_infos *infos);
+void	complex(t_stack *a, t_stack *b, t_bench_infos *infos);
 
 /* PARSING && PARSING UTILS */
 
