@@ -6,7 +6,7 @@
 /*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:14:27 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/18 12:40:44 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2025/12/18 17:35:59 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ t_stack	manage_input(char **av, int ac)
 	stack_a.index_top = get_top_index(splitted);
 	if (stack_a.index_top == 0)
 	{
-		free(splitted);
+		free_str_array(splitted);
 		exit(EXIT_SUCCESS);
 	}
 	str_arrayto_int(splitted, &stack_a);
