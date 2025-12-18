@@ -6,7 +6,7 @@
 /*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:22:45 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/18 10:02:09 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2025/12/18 10:07:32 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 int	rrb(t_stack *b)
 {
+	int	i;
+	int	temps;
+	int	temps_rank;
+
 	ft_putendl_fd("rrb", 1);
-	int i;
-	int temps;
-	int temps_rank;
 	if (b->index_top == 1)
 	{
 		swap(&b->array[1], &b->array[0]);

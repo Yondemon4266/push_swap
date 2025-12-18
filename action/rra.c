@@ -6,7 +6,7 @@
 /*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:10:18 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/18 10:02:19 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2025/12/18 10:06:06 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	rra(t_stack *a)
 	int	i;
 	int	temps;
 	int	temps_rank;
-	
+
 	ft_putendl_fd("rra", 1);
 	if (a->index_top == 1)
 	{
