@@ -1,9 +1,9 @@
 NAME        = push_swap
+LIBFT       = libft/libft.a
 CC          = cc
 CFLAGS      = -Wall -Wextra -Werror -MMD -MP
 BUILDDIR    = build
 
-# Your source files
 C_FILE      = main.c \
               action/pa.c \
               action/pb.c \
@@ -38,13 +38,16 @@ DEPS        = $(O_FILE:%.o=%.d)
 
 all: $(NAME)
 
-$(NAME): $(O_FILE)
+$(NAME): $(O_FILE) $(LIBFT)
 	make -C libft/
-	$(CC) $(CFLAGS) -g3 -o $@ $(O_FILE) -Llibft -lft
+	$(CC) $(CFLAGS) -o $@ $(O_FILE) -Llibft -lft
+
+$(LIBFT): libft
+	$(MAKE) -C libft/
 
 $(BUILDDIR)/%.o: %.c
 	mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -g3 -c  $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) -r $(BUILDDIR)
@@ -56,6 +59,6 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re 
+.PHONY: all clean fclean re libft
 
 -include $(DEPS)

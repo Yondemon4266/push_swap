@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   display_bench.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 10:57:10 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/18 12:38:42 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2025/12/18 13:28:18 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ static void	total_ops_calculation(t_bench_infos *infos)
 	infos->total_ops += infos->rrb_count + infos->rrr_count;
 }
 
-static void print_dis(float dis)
+static void	print_dis(float dis)
 {
 	ft_printf("[bench] disorder: %d.", (int)(dis * 100));
-	dis = (dis*100) - (int)(dis *100);
+	dis = (dis * 100) - (int)(dis * 100);
 	dis *= 100;
 	if ((int)dis < 10)
 		ft_printf("0");
-	ft_printf("%d%%\n",(int)dis);
+	ft_printf("%d%%\n", (int)dis);
 }
 
 void	display_bench(t_bench_infos *infos)
