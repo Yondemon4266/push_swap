@@ -6,13 +6,13 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:05:05 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/12 17:02:35 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/18 09:24:55 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	swap(int *a, int *b)
 {
-	int temp;
+	int	temp;
 
 	temp = *a;
 	*a = *b;

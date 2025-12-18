@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:05:56 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/17 19:52:22 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/18 09:39:22 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,6 @@ int	main(int ac, char **av)
 		infos.disorder = compute_disorder(stack_a);
 		choosing_sort_function(&infos, &stack_a, &stack_b);
 		if (infos.bench == 1)
-			display_bench(infos);
+			display_bench(&infos);
 	}
 }

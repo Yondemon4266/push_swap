@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:27:25 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/17 12:51:28 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/18 09:45:52 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_print_pointer(void *ptr)
 
 char	*ft_strcpy(char *dest, const char *src)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (src[i])

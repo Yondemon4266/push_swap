@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:14:27 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/17 11:09:55 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/18 09:23:48 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,9 @@ static void	ranked_array(t_stack *a)
 
 t_stack	manage_input(char **av, int ac)
 {
-	char *joined_str;
-	char **splitted;
-	t_stack stack_a;
+	char	*joined_str;
+	char	**splitted;
+	t_stack	stack_a;
 
 	verify_input(av, ac);
 	joined_str = join_strings(av, ac);

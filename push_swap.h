@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:11:29 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/17 17:40:51 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/18 09:39:29 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,6 @@ void	manage_flag(char *flag, enum e_strategy *strategy, int *bench);
 
 /* DISPLAY INFOS */
 
-void    display_bench(t_bench_infos infos);
+void    display_bench(t_bench_infos *infos);
 
 #endif
