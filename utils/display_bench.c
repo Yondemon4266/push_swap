@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 10:57:10 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/18 09:45:20 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/18 09:51:22 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	display_bench(t_bench_infos *infos)
 {
 	char	str_strategy[256];
 
+	total_ops_calculation(infos);
 	if (infos->strategy == SIMPLE)
 		ft_strcpy(str_strategy, "Simple / O(n²)");
 	else if (infos->strategy == MEDIUM)
