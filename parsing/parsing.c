@@ -3,29 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:14:27 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/18 09:23:48 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/18 11:52:53 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	is_duplicate_instack(t_stack stack_a)
+static void	is_duplicate_instack(t_stack *stack_a)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (i < stack_a.index_top)
+	while (i < stack_a->index_top)
 	{
 		j = i + 1;
-		while (j <= stack_a.index_top)
+		while (j <= stack_a->index_top)
 		{
-			if (stack_a.array[i] == stack_a.array[j])
+			if (stack_a->array[i] == stack_a->array[j])
 			{
-				ft_putendl_fd("Error duplicate", 2);
+				free(stack_a->array);
+				free(stack_a->ranks);
+				ft_putendl_fd("Error", 2);
 				exit(EXIT_FAILURE);
 			}
 			j++;
@@ -94,14 +96,17 @@ t_stack	manage_input(char **av, int ac)
 	if (!splitted)
 	{
 		free(joined_str);
-		ft_putendl_fd("Error on split", 2);
+		ft_putendl_fd("Error", 2);
 		exit(EXIT_FAILURE);
 	}
 	stack_a.index_top = get_top_index(splitted);
 	if (stack_a.index_top == 0)
+	{
+		free(splitted);
 		exit(EXIT_SUCCESS);
+	}
 	str_arrayto_int(splitted, &stack_a);
 	ranked_array(&stack_a);
-	is_duplicate_instack(stack_a);
+	is_duplicate_instack(&stack_a);
 	return (stack_a);
 }

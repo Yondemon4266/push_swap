@@ -27,6 +27,8 @@ C_FILE      = main.c \
               utils/ft_printf_utils.c \
               utils/ft_printf.c \
               utils/display_bench.c \
+              utils/free_stack.c \
+              parsing/parsing_utils_two.c \
               parsing/parsing_utils.c \
               parsing/manage_flags.c \
               parsing/parsing.c

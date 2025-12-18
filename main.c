@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:05:56 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/18 10:07:27 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/18 11:53:41 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,5 +105,6 @@ int	main(int ac, char **av)
 		choosing_sort_function(&infos, &stack_a, &stack_b);
 		if (infos.bench == 1)
 			display_bench(&infos);
+		free_stack(&stack_a, &stack_b);
 	}
 }

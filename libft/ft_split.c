@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aluslu <aluslu@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 16:34:56 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/10 16:34:57 by aluslu           ###   ########lyon.fr   */
+/*   Updated: 2025/12/18 10:26:52 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ char	**ft_split(char *str, char *charset)
 	res = ft_splitter(str, charset, res);
 	if (!res)
 		return (NULL);
+	free(str);
 	return (res);
 }
 

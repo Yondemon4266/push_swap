@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:11:29 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/18 10:01:35 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/18 11:54:02 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ int					ft_isspace(char c);
 void				free_str_array(char **str);
 void				swap(int *a, int *b);
 char				*ft_strcpy(char *dest, const char *src);
+void				exit_str_to_int(t_stack *a, char **str);
+int					free_stack(t_stack *a_stack, t_stack *b_stack);
 
 /* FT_PRINTF */
 
