@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   display_bench.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 10:57:10 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/18 13:28:18 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/18 14:40:53 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	display_bench(t_bench_infos *infos)
 	else if (infos->strategy == ADAPTIVE && (infos->disorder >= 0.50))
 		ft_strcpy(str_strategy, "Adaptive / O(nlogn)");
 	print_dis(infos->disorder);
+	ft_printf("[bench] strategy: %s\n", str_strategy);
 	ft_printf("[bench] total ops: %d\n", infos->total_ops);
 	ft_printf("[bench] sa: %d sb: %d ", infos->sa_count, infos->sb_count);
 	ft_printf("ss: %d pa: %d ", infos->ss_count, infos->pa_count);

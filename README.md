@@ -29,9 +29,28 @@ Run the program with a list of numbers and a "flag" to choose the algorithm:
 
 ```bash
 ./push_swap --medium --bench $(shuf -n 500 -i 1-1000)
+ra
+ra
+ra
+ra
+ra
+ra
+...
+pa
+rrb
+pa
+rrb
+rrb
+pa
+pa
+pa
+[bench] disorder: 47.70%
+[bench] total ops: 6075
+[bench] sa: 0 sb: 0 ss: 0 pa: 500 pb: 500
+[bench] ra: 3821 rb: 627 rr: 0 rra: 0 rrb: 627 rrr: 0
 ```
 
-## Algorithms and Complexity
+## Algorithms 
 
 Here is an explanation of our choices and the performance of each algorithm:
 
@@ -44,7 +63,7 @@ Here is an explanation of our choices and the performance of each algorithm:
 ### 2. Chunk-based Sort (`--medium`)
 
 * **Logic:** The list is divided into several groups (chunks). Each group is sent one by one to Stack B and then brought back to Stack A in the correct order.
-* **Complexity:** O(n\sqrt{n})
+* **Complexity:** O(n√n)
 * **Why?** This algorithm gives the best results for sorting 100 numbers because it optimizes stack rotations.
 
 ### 3. Radix Sort (`--complexe`)
@@ -59,23 +78,23 @@ Here is an explanation of our choices and the performance of each algorithm:
 
 * Simple: `(mbichet)`
 * Medium: `(aluslu + mbichet)`
-* Complex: `(mbichet)`
+* Complex: `(aluslu + mbichet)`
 
 #### Parsing
 
-* Main: `(aluslu)`
+* Main: `(aluslu + mbichet)`
 * Input management: `(aluslu)`
 * Flag management: `(aluslu)`
 
 #### Others
 
 * Makefile: `(aluslu + mbichet)`
-* Push_swap logic: `(aluslu + mbichet)`
+* Push_swap.h : `(aluslu + mbichet)`
 * README: `(aluslu + mbichet)`
 
 ## Resources
 
 * **Wikipedia:** Used to understand complexity formulas and the logic behind Radix and Bubble Sort.
 * **AI (Artificial Intelligence):**
-* Helped us understand how to use bits for the Radix algorithm.
-* Helped us translate and structure this README file.
+   * Helped us understand how to use bits for the Radix algorithm.
+   * Helped us translate and structure this README file.
