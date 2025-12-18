@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   medium.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 10:35:07 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/17 19:58:53 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/18 10:15:14 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ static void	back_to_a(t_stack *a, t_stack *b, t_bench_infos *infos)
 
 void	medium(t_stack *a, t_stack *b, t_bench_infos *infos)
 {
-	int i;
-	int range;
+	int	i;
+	int	range;
 
 	i = 0;
 	range = 15;
