@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   display_bench.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 10:57:10 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/18 09:51:22 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/18 12:38:42 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,16 @@ static void	total_ops_calculation(t_bench_infos *infos)
 	infos->total_ops += infos->pa_count + infos->pb_count + infos->ra_count;
 	infos->total_ops += infos->rb_count + infos->rr_count + infos->rra_count;
 	infos->total_ops += infos->rrb_count + infos->rrr_count;
+}
+
+static void print_dis(float dis)
+{
+	ft_printf("[bench] disorder: %d.", (int)(dis * 100));
+	dis = (dis*100) - (int)(dis *100);
+	dis *= 100;
+	if ((int)dis < 10)
+		ft_printf("0");
+	ft_printf("%d%%\n",(int)dis);
 }
 
 void	display_bench(t_bench_infos *infos)
@@ -38,7 +48,7 @@ void	display_bench(t_bench_infos *infos)
 		ft_strcpy(str_strategy, "Adaptive / O(n√n)");
 	else if (infos->strategy == ADAPTIVE && (infos->disorder >= 0.50))
 		ft_strcpy(str_strategy, "Adaptive / O(nlogn)");
-	ft_printf("[bench] disorder: %d%%\n", (int)(infos->disorder * 100));
+	print_dis(infos->disorder);
 	ft_printf("[bench] total ops: %d\n", infos->total_ops);
 	ft_printf("[bench] sa: %d sb: %d ", infos->sa_count, infos->sb_count);
 	ft_printf("ss: %d pa: %d ", infos->ss_count, infos->pa_count);

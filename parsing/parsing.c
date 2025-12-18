@@ -6,7 +6,7 @@
 /*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:14:27 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/18 11:52:53 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2025/12/18 12:40:44 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static void	verify_input(char **av, int ac)
 				j++;
 			else
 			{
-				ft_putendl_fd("Error input incorrect", 2);
+				ft_putendl_fd("Error", 2);
 				exit(EXIT_FAILURE);
 			}
 		}

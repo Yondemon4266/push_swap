@@ -6,7 +6,7 @@
 /*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:15:26 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/18 11:53:23 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2025/12/18 12:40:37 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char	*join_strings(char **av, int ac)
 	joined_str = (char *)malloc(sizeof(char) * (size + 1));
 	if (!joined_str)
 	{
-		ft_putendl_fd("Error malloc joined_str", 2);
+		ft_putendl_fd("Error", 2);
 		exit(EXIT_FAILURE);
 	}
 	fill_string(joined_str, av, ac);

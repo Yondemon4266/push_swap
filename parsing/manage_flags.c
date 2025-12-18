@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   manage_flags.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:12:34 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/18 09:23:25 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/18 12:40:28 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	is_valid_flag(char *flag)
 		return (1);
 	else
 	{
-		ft_putendl_fd("Error flag is invalid", 2);
+		ft_putendl_fd("Error", 2);
 		exit(EXIT_FAILURE);
 		return (0);
 	}
@@ -46,7 +46,7 @@ void	manage_flag(char *flag, enum e_strategy *strategy, int *bench)
 		*bench = 1;
 	else
 	{
-		ft_putendl_fd("Error flag is invalid", 2);
+		ft_putendl_fd("Error", 2);
 		exit(EXIT_FAILURE);
 	}
 }
