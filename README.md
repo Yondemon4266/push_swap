@@ -44,10 +44,11 @@ rrb
 pa
 pa
 pa
-[bench] disorder: 47.70%
-[bench] total ops: 6075
+[bench] disorder: 49.70%
+[bench] strategy: Medium / O(n√n)
+[bench] total ops: 5909
 [bench] sa: 0 sb: 0 ss: 0 pa: 500 pb: 500
-[bench] ra: 3821 rb: 627 rr: 0 rra: 0 rrb: 627 rrr: 0
+[bench] ra: 3600 rb: 656 rr: 0 rra: 0 rrb: 653 rrr: 0
 ```
 
 ## Algorithms 
