@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rrb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:22:45 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/17 19:14:53 by aluslu           ###   ########.fr       */
+/*   Updated: 2025/12/18 10:02:09 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 int	rrb(t_stack *b)
 {
 	ft_putendl_fd("rrb", 1);
-	if (!b)
-		return (1);
-	if (b->index_top <= 0)
-		return (1);
 	int i;
 	int temps;
 	int temps_rank;

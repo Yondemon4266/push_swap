@@ -1,0 +1,4 @@
+[bench] disorder: 51%
+[bench] total ops: 15068
+[bench] sa: 0 sb: 0 ss: 0 pa: 5068 pb: 5068
+[bench] ra: 4932 rb: 0 rr: 0 rra: 0 rrb: 0 rrr: 0
