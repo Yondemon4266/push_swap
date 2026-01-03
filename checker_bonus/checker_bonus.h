@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 10:11:29 by mbichet           #+#    #+#             */
-/*   Updated: 2026/01/03 16:14:30 by aluslu           ###   ########.fr       */
+/*   Created: 2026/01/03 17:32:51 by aluslu            #+#    #+#             */
+/*   Updated: 2026/01/03 18:41:46 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef CHECKER_BONUS_H
+# define CHECKER_BONUS_H
 
-# include "libft/libft.h"
-# include <stdarg.h>
-# include <stdlib.h>
 # include <unistd.h>
+# include <stdlib.h>
+# include "../libft/libft.h"
 
 typedef struct s_stack
 {
@@ -24,33 +23,6 @@ typedef struct s_stack
 	int				*array;
 	int				*ranks;
 }					t_stack;
-
-enum				e_strategy
-{
-	SIMPLE,
-	MEDIUM,
-	COMPLEX,
-	ADAPTIVE
-};
-
-typedef struct s_bench_infos
-{
-	float			disorder;
-	enum e_strategy	strategy;
-	int				bench;
-	int				total_ops;
-	int				sa_count;
-	int				sb_count;
-	int				ss_count;
-	int				pa_count;
-	int				pb_count;
-	int				ra_count;
-	int				rb_count;
-	int				rr_count;
-	int				rra_count;
-	int				rrb_count;
-	int				rrr_count;
-}					t_bench_infos;
 
 /* FONCTIONS D'INSTRUCTIONS */
 
@@ -65,12 +37,6 @@ int					rrr(t_stack *a, t_stack *b);
 int					sa(t_stack *a);
 int					sb(t_stack *b);
 int					ss(t_stack *a, t_stack *b);
-
-/* FONCTIONS D'ALGORITHME */
-
-void				simple(t_stack *a, t_bench_infos *infos);
-void				medium(t_stack *a, t_stack *b, t_bench_infos *infos);
-void				complex(t_stack *a, t_stack *b, t_bench_infos *infos);
 
 /* PARSING && PARSING UTILS */
 
@@ -87,26 +53,6 @@ void				swap(int *a, int *b);
 char				*ft_strcpy(char *dest, const char *src);
 void				exit_str_to_int(t_stack *a, char **str);
 int					free_stack(t_stack *a_stack, t_stack *b_stack);
-
-/* FT_PRINTF */
-
-int					ft_printf(const char *str, ...);
-int					ft_putcharl(int c);
-int					ft_putstrl(char *s);
-int					ft_putnbrl(int nb);
-int					ft_unsigned_putnbrl(unsigned int nb);
-int					ft_putnbrl_hexa(uintptr_t nb, char c);
-int					ft_print_pointer(void *ptr);
-char				*ft_strcpy(char *dest, const char *src);
-
-/* MANAGING FLAGS FUNCTIONS */
-
-int					is_valid_flag(char *flag);
-void				manage_flag(char *flag, enum e_strategy *strategy,
-						int *bench);
-
-/* DISPLAY INFOS */
-
-void				display_bench(t_bench_infos *infos);
+void                error_line_exit(char *line, t_stack *a, t_stack *b);
 
 #endif

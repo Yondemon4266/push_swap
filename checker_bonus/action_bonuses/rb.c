@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_utils_two.c                                :+:      :+:    :+:   */
+/*   rb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/18 10:46:12 by mbichet           #+#    #+#             */
-/*   Updated: 2026/01/03 18:34:38 by aluslu           ###   ########.fr       */
+/*   Created: 2025/12/09 15:07:09 by mbichet           #+#    #+#             */
+/*   Updated: 2026/01/03 18:47:14 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker_bonus.h"
 
-void	exit_str_to_int(t_stack *stack_a, char **str)
+int	rb(t_stack *b)
 {
-	free(stack_a->array);
-	free(stack_a->ranks);
-	free_str_array(str);
-	ft_putendl_fd("Error ", 2);
-	exit(EXIT_FAILURE);
+	int	i;
+	int	temps;
+	int	temps_rank;
+
+	if (!b)
+		return (1);
+	if (b->index_top <= 0)
+		return (1);
+	i = b->index_top;
+	temps = b->array[b->index_top];
+	temps_rank = b->ranks[b->index_top];
+	while (i > 0)
+	{
+		b->array[i] = b->array[i - 1];
+		b->ranks[i] = b->ranks[i - 1];
+		i--;
+	}
+	b->array[0] = temps;
+	b->ranks[0] = temps_rank;
+	return (1);
 }

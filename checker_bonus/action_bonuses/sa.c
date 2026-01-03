@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_utils_two.c                                :+:      :+:    :+:   */
+/*   sa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/18 10:46:12 by mbichet           #+#    #+#             */
-/*   Updated: 2026/01/03 18:34:38 by aluslu           ###   ########.fr       */
+/*   Created: 2025/12/09 16:05:15 by mbichet           #+#    #+#             */
+/*   Updated: 2026/01/03 18:47:23 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker_bonus.h"
 
-void	exit_str_to_int(t_stack *stack_a, char **str)
+int	sa(t_stack *a)
 {
-	free(stack_a->array);
-	free(stack_a->ranks);
-	free_str_array(str);
-	ft_putendl_fd("Error ", 2);
-	exit(EXIT_FAILURE);
+	if (!a || a->index_top <= 0)
+		return (1);
+	swap(&a->array[a->index_top], &a->array[a->index_top - 1]);
+	swap(&a->ranks[a->index_top], &a->ranks[a->index_top - 1]);
+	return (1);
 }

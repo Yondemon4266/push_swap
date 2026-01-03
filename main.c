@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:05:56 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/18 13:28:51 by aluslu           ###   ########.fr       */
+/*   Updated: 2026/01/03 18:36:50 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,27 @@ static void	init_bench_infos(t_bench_infos *infos)
 	infos->rrr_count = 0;
 }
 
-static t_stack	init_empty_stack(int size)
+static t_stack	init_empty_stack(int size, t_stack *a)
 {
 	t_stack	stack;
 
 	stack.array = (int *)malloc(sizeof(int) * size);
+	if (!stack.array)
+	{
+		free(a->array);
+		free(a->ranks);
+		ft_putendl_fd("Error", 2);
+		exit(EXIT_FAILURE);
+	}
 	stack.ranks = (int *)malloc(sizeof(int) * size);
+	if (!stack.ranks)
+	{
+		free(stack.array);
+		free(a->array);
+		free(a->ranks);
+		ft_putendl_fd("Error", 2);
+		exit(EXIT_FAILURE);
+	}
 	stack.index_top = -1;
 	return (stack);
 }
@@ -100,7 +115,7 @@ int	main(int ac, char **av)
 		while (ft_strncmp(av[i], "--", 2) == 0 && is_valid_flag(av[i]))
 			manage_flag(av[i++], &infos.strategy, &infos.bench);
 		stack_a = manage_input(av + i, ac - i);
-		stack_b = init_empty_stack(stack_a.index_top + 1);
+		stack_b = init_empty_stack(stack_a.index_top + 1, &stack_a);
 		infos.disorder = compute_disorder(stack_a);
 		choosing_sort_function(&infos, &stack_a, &stack_b);
 		if (infos.bench == 1)
