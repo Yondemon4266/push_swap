@@ -1,8 +1,0 @@
-build/checker_bonus/action_bonus/pa_bonus.o: \
-  checker_bonus/action_bonus/pa_bonus.c \
-  checker_bonus/action_bonus/../checker_bonus.h \
-  checker_bonus/action_bonus/../../libft/libft.h
-
-checker_bonus/action_bonus/../checker_bonus.h:
-
-checker_bonus/action_bonus/../../libft/libft.h:
