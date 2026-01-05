@@ -6,16 +6,19 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 16:26:51 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/17 19:54:05 by aluslu           ###   ########.fr       */
+/*   Updated: 2026/01/04 15:39:39 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	rr(t_stack *a, t_stack *b)
+int	rr(t_stack *a, t_stack *b, int do_print)
 {
-	ft_putendl_fd("rr", 1);
-	ra(a);
-	rb(b);
+	if (do_print == 1)
+		ft_putendl_fd("rr", 1);
+	if (!a || !b)
+		return (1);
+	ra(a, 0);
+	rb(b, 0);
 	return (1);
 }

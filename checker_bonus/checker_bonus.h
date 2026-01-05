@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 17:32:51 by aluslu            #+#    #+#             */
-/*   Updated: 2026/01/03 18:41:46 by aluslu           ###   ########.fr       */
+/*   Updated: 2026/01/05 07:25:20 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,17 @@ typedef struct s_stack
 
 /* FONCTIONS D'INSTRUCTIONS */
 
-int					pa(t_stack *a, t_stack *b);
-int					pb(t_stack *a, t_stack *b);
-int					ra(t_stack *a);
-int					rb(t_stack *b);
-int					rr(t_stack *a, t_stack *b);
-int					rra(t_stack *a);
-int					rrb(t_stack *b);
-int					rrr(t_stack *a, t_stack *b);
-int					sa(t_stack *a);
-int					sb(t_stack *b);
-int					ss(t_stack *a, t_stack *b);
+int					pa(t_stack *a, t_stack *b, int do_print);
+int					pb(t_stack *a, t_stack *b, int do_print);
+int					ra(t_stack *a, int do_print);
+int					rb(t_stack *b, int do_print);
+int					rr(t_stack *a, t_stack *b, int do_print);
+int					rra(t_stack *a, int do_print);
+int					rrb(t_stack *b, int do_print);
+int					rrr(t_stack *a, t_stack *b, int do_print);
+int					sa(t_stack *a, int do_print);
+int					sb(t_stack *b, int do_print);
+int					ss(t_stack *a, t_stack *b, int do_print);
 
 /* PARSING && PARSING UTILS */
 
@@ -53,6 +53,9 @@ void				swap(int *a, int *b);
 char				*ft_strcpy(char *dest, const char *src);
 void				exit_str_to_int(t_stack *a, char **str);
 int					free_stack(t_stack *a_stack, t_stack *b_stack);
-void                error_line_exit(char *line, t_stack *a, t_stack *b);
+
+/* UTILS */
+
+int		is_stack_sorted(t_stack *a);
 
 #endif

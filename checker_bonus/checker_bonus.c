@@ -25,100 +25,115 @@ static t_stack	init_empty_stack(int size, t_stack *a)
 	return (stack);
 }
 
-static char    *read_instructions(void)
+static int	is_valid_line(char *line)
 {
-    char    *line;
-    char    buffer[1];
-    int     i;
-    int     read_bytes;
-
-    line = malloc(4);
-    if (!line)
-        return (NULL);
-    i = 0;
-    while ((read_bytes = read(0, buffer, 1)) > 0)
-    {
-        if (i == 4)
-            break ;
-        line[i] = buffer[0];
-        if (buffer[0] == '\n')
-            break ;
-        i++;
-    }
-    line[i] = '\0';
-    return (line);
+	if (ft_strcmp(line, "pa\n") == 0)
+		return (1);
+	else if (ft_strcmp(line, "pb\n") == 0)
+		return (1);
+	else if (ft_strcmp(line, "ra\n") == 0)
+		return (1);
+	else if (ft_strcmp(line, "rb\n") == 0)
+		return (1);
+	else if (ft_strcmp(line, "rr\n") == 0)
+		return (1);
+	else if (ft_strcmp(line, "rra\n") == 0)
+		return (1);
+	else if (ft_strcmp(line, "rrb\n") == 0)
+		return (1);
+	else if (ft_strcmp(line, "rrr\n") == 0)
+		return (1);
+	else if (ft_strcmp(line, "sa\n") == 0)
+		return (1);
+	else if (ft_strcmp(line, "sb\n") == 0)
+		return (1);
+	else if (ft_strcmp(line, "ss\n") == 0)
+		return (1);
+	return (0);
 }
 
-static int  is_valid_line(char *line)
+static void	choose_instruction(char *line, t_stack *a, t_stack *b)
 {
-    if (ft_strcmp(line, "pa") == 0)
-        return (1);
-    else if (ft_strcmp(line, "pb") == 0)
-        return (1);
-    else if (ft_strcmp(line, "ra") == 0)
-        return (1);
-    else if (ft_strcmp(line, "rb") == 0)
-        return (1);
-    else if (ft_strcmp(line, "rr") == 0)
-        return (1);
-    else if (ft_strcmp(line, "rra") == 0)
-        return (1);
-    else if (ft_strcmp(line, "rrb") == 0)
-        return (1);
-    else if (ft_strcmp(line, "rrr") == 0)
-        return (1);
-    else if (ft_strcmp(line, "sa") == 0)
-        return (1);
-    else if (ft_strcmp(line, "sb") == 0)
-        return (1);
-    else if (ft_strcmp(line, "ss") == 0)
-        return (1);
-    return (0);
+	if (ft_strcmp(line, "pa\n") == 0)
+		pa(a, b, 0);
+	else if (ft_strcmp(line, "pb\n") == 0)
+		pb(a, b, 0);
+	else if (ft_strcmp(line, "ra\n") == 0)
+		ra(a, 0);
+	else if (ft_strcmp(line, "rb\n") == 0)
+		rb(b, 0);
+	else if (ft_strcmp(line, "rr\n") == 0)
+		rr(a, b, 0);
+	else if (ft_strcmp(line, "rra\n") == 0)
+		rra(a, 0);
+	else if (ft_strcmp(line, "rrb\n") == 0)
+		rrb(b, 0);
+	else if (ft_strcmp(line, "rrr\n") == 0)
+		rrr(a, b, 0);
+	else if (ft_strcmp(line, "sa\n") == 0)
+		sa(a, 0);
+	else if (ft_strcmp(line, "sb\n") == 0)
+		sb(b, 0);
+	else if (ft_strcmp(line, "ss\n") == 0)
+		ss(a, b, 0);
 }
 
-static void    choose_instruction(char *line, t_stack *a, t_stack *b)
+static int	read_instruction(char **line)
 {
-    if (ft_strcmp(line, "pa") == 0)
-        pa(a, b);
-    else if (ft_strcmp(line, "pb") == 0)
-        pb(a, b);
-    else if (ft_strcmp(line, "ra") == 0)
-        ra(a);
-    else if (ft_strcmp(line, "rb") == 0)
-        rb(b);
-    else if (ft_strcmp(line, "rr") == 0)
-        rr(a, b);
-    else if (ft_strcmp(line, "rra") == 0)
-        rra(a);
-    else if (ft_strcmp(line, "rrb") == 0)
-        rrb(b);
-    else if (ft_strcmp(line, "rrr") == 0)
-        rrr(a, b);
-    else if (ft_strcmp(line, "sa") == 0)
-        sa(a);
-    else if (ft_strcmp(line, "sb") == 0)
-        sb(b);
-    else if (ft_strcmp(line, "ss") == 0)
-        ss(a, b);
+	char	buffer[5];
+	int		i;
+	int		read_bytes;
+
+	read_bytes = 0;
+	while (read(0, buffer, 4) > 0)
+	{
+		i = 0;
+		buffer[4] = 0;
+		while (buffer[i])
+			(*line)[read_bytes++] = buffer[i++];
+	}
+	__builtin_printf("line:%s", *line);
+	if (read_bytes <= 0)
+		return (0);
+	return (1);
 }
 
-int main(int ac, char **av)
+static void	run_checker(t_stack *a, t_stack *b)
 {
-    t_stack			stack_a;
-	t_stack			stack_b;
-    char            *line;
+	char	*line;
 
-    if (ac >= 2)
-    {
-        stack_a = manage_input(av + 1, ac - 1);
-	    stack_b = init_empty_stack(stack_a.index_top + 1, &stack_a);
-        while ((line = read_instructions()) > 0)
-        {
-            if (!is_valid_line(line))
-                error_line_exit(line, &stack_a, &stack_b);
-            if (line[0] == '\0')
+	line = malloc(sizeof(char) * 1024);
+	if (!line)
+		return ;
+	while (read_instruction(&line))
+	{
+		if (!is_valid_line(line))
+		{
+			free(line);
+			free_stack(a, b);
+			ft_putendl_fd("Error", 2);
+			exit(EXIT_FAILURE);
+		}
+		else
+			choose_instruction(line, a, b);
+		free(line);
+	}
+}
 
-            choose_instruction(line, &stack_a, &stack_b);
-        }
-    }
+int	main(int ac, char **av)
+{
+	t_stack stack_a;
+	t_stack stack_b;
+
+	if (ac == 1)
+		return (0);
+	stack_a = manage_input(av + 1, ac - 1);
+	stack_b = init_empty_stack(stack_a.index_top + 1, &stack_a);
+	run_checker(&stack_a, &stack_b);
+	if (is_stack_sorted(&stack_a) && stack_b.index_top == -1)
+		ft_putendl_fd("OK", 1);
+	else
+		ft_putendl_fd("KO", 1);
+	free_stack(&stack_a, &stack_b);
+	return (0);
 }

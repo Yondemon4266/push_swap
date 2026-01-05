@@ -6,19 +6,20 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 14:21:40 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/17 14:05:01 by aluslu           ###   ########.fr       */
+/*   Updated: 2026/01/04 15:18:17 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ra(t_stack *a)
+int	ra(t_stack *a, int do_print)
 {
 	int	i;
 	int	temps;
 	int	temps_rank;
 
-	ft_putendl_fd("ra", 1);
+	if (do_print == 1)
+		ft_putendl_fd("ra", 1);
 	if (!a)
 		return (1);
 	if (a->index_top <= 0)

@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   rrr.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:26:37 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/18 10:09:02 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2026/01/04 15:39:23 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	rrr(t_stack *a, t_stack *b)
+int	rrr(t_stack *a, t_stack *b, int do_print)
 {
-	ft_putendl_fd("rrr", 1);
-	rra(a);
-	rrb(b);
+	if (do_print == 1)
+		ft_putendl_fd("rrr", 1);
+	rra(a, 0);
+	rrb(b, 0);
 	return (1);
 }

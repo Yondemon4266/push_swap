@@ -6,16 +6,17 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 16:12:48 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/17 19:53:31 by aluslu           ###   ########.fr       */
+/*   Updated: 2026/01/04 15:39:06 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ss(t_stack *a, t_stack *b)
+int	ss(t_stack *a, t_stack *b, int do_print)
 {
-	ft_putendl_fd("ss", 1);
-	sa(a);
-	sb(b);
+	if (do_print == 1)
+		ft_putendl_fd("ss", 1);
+	sa(a, 0);
+	sb(b, 0);
 	return (1);
 }

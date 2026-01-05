@@ -3,22 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   rra.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:10:18 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/18 10:06:06 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2026/01/04 15:22:17 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	rra(t_stack *a)
+int	rra(t_stack *a, int do_print)
 {
 	int	i;
 	int	temps;
 	int	temps_rank;
 
-	ft_putendl_fd("rra", 1);
+	if (do_print == 1)
+		ft_putendl_fd("rra", 1);
+	if (!a || a->index_top <= 0)
+		return (1);
 	if (a->index_top == 1)
 	{
 		swap(&a->array[1], &a->array[0]);

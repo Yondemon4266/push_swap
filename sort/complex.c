@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 10:41:04 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/17 17:26:27 by aluslu           ###   ########.fr       */
+/*   Updated: 2026/01/04 15:31:38 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ void	complex(t_stack *a, t_stack *b, t_bench_infos *infos)
 		while (j <= limit)
 		{
 			if (!((a->ranks[a->index_top] >> i) & 1))
-				infos->pb_count += pb(a, b);
+				infos->pb_count += pb(a, b, 1);
 			else
-				infos->ra_count += ra(a);
+				infos->ra_count += ra(a, 1);
 			j++;
 		}
 		while (b->index_top != -1)
-			infos->pa_count += pa(a, b);
+			infos->pa_count += pa(a, b, 1);
 		i++;
 	}
 }

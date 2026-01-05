@@ -3,22 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   rrb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:22:45 by mbichet           #+#    #+#             */
-/*   Updated: 2025/12/18 10:07:32 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2026/01/04 15:22:27 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	rrb(t_stack *b)
+int	rrb(t_stack *b, int do_print)
 {
 	int	i;
 	int	temps;
 	int	temps_rank;
 
-	ft_putendl_fd("rrb", 1);
+	if (do_print == 1)
+		ft_putendl_fd("rrb", 1);
+	if (!b || b->index_top <= 0)
+		return (1);
 	if (b->index_top == 1)
 	{
 		swap(&b->array[1], &b->array[0]);

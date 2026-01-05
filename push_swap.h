@@ -6,7 +6,7 @@
 /*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:11:29 by mbichet           #+#    #+#             */
-/*   Updated: 2026/01/03 16:14:30 by aluslu           ###   ########.fr       */
+/*   Updated: 2026/01/04 15:38:20 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,17 @@ typedef struct s_bench_infos
 
 /* FONCTIONS D'INSTRUCTIONS */
 
-int					pa(t_stack *a, t_stack *b);
-int					pb(t_stack *a, t_stack *b);
-int					ra(t_stack *a);
-int					rb(t_stack *b);
-int					rr(t_stack *a, t_stack *b);
-int					rra(t_stack *a);
-int					rrb(t_stack *b);
-int					rrr(t_stack *a, t_stack *b);
-int					sa(t_stack *a);
-int					sb(t_stack *b);
-int					ss(t_stack *a, t_stack *b);
+int					pa(t_stack *a, t_stack *b, int do_print);
+int					pb(t_stack *a, t_stack *b, int do_print);
+int					ra(t_stack *a, int do_print);
+int					rb(t_stack *b, int do_print);
+int					rr(t_stack *a, t_stack *b, int do_print);
+int					rra(t_stack *a, int do_print);
+int					rrb(t_stack *b, int do_print);
+int					rrr(t_stack *a, t_stack *b, int do_print);
+int					sa(t_stack *a, int do_print);
+int					sb(t_stack *b, int do_print);
+int					ss(t_stack *a, t_stack *b, int do_print);
 
 /* FONCTIONS D'ALGORITHME */
 

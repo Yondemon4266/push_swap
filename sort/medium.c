@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   medium.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 10:35:07 by aluslu            #+#    #+#             */
-/*   Updated: 2025/12/18 10:15:14 by mbichet          ###   ########lyon.fr   */
+/*   Updated: 2026/01/04 15:31:52 by aluslu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,14 @@ static void	back_to_a(t_stack *a, t_stack *b, t_bench_infos *infos)
 		if (pos > b->index_top / 2)
 		{
 			while (b->ranks[b->index_top] != target)
-				infos->rb_count += rb(b);
+				infos->rb_count += rb(b, 1);
 		}
 		else
 		{
 			while (b->ranks[b->index_top] != target)
-				infos->rrb_count += rrb(b);
+				infos->rrb_count += rrb(b, 1);
 		}
-		infos->pa_count += pa(a, b);
+		infos->pa_count += pa(a, b, 1);
 		target--;
 	}
 }
@@ -61,17 +61,17 @@ void	medium(t_stack *a, t_stack *b, t_bench_infos *infos)
 	{
 		if (a->ranks[a->index_top] <= i)
 		{
-			infos->pb_count += pb(a, b);
-			infos->rb_count += rb(b);
+			infos->pb_count += pb(a, b, 1);
+			infos->rb_count += rb(b, 1);
 			i++;
 		}
 		else if (a->ranks[a->index_top] <= i + range)
 		{
-			infos->pb_count += pb(a, b);
+			infos->pb_count += pb(a, b, 1);
 			i++;
 		}
 		else
-			infos->ra_count += ra(a);
+			infos->ra_count += ra(a, 1);
 	}
 	back_to_a(a, b, infos);
 }
