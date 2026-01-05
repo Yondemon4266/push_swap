@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rra.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:10:18 by mbichet           #+#    #+#             */
-/*   Updated: 2026/01/04 15:22:17 by aluslu           ###   ########.fr       */
+/*   Updated: 2026/01/05 12:35:02 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,13 @@ int	rra(t_stack *a, int do_print)
 		swap(&a->ranks[1], &a->ranks[0]);
 		return (1);
 	}
-	i = 0;
+	i = -1;
 	temps = a->array[0];
 	temps_rank = a->ranks[0];
-	while (i < a->index_top)
+	while (++i < a->index_top)
 	{
 		a->array[i] = a->array[i + 1];
 		a->ranks[i] = a->ranks[i + 1];
-		i++;
 	}
 	a->ranks[a->index_top] = temps_rank;
 	a->array[a->index_top] = temps;

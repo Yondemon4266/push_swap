@@ -14,6 +14,10 @@ Use the Makefile to compile the project:
 ```bash
 make
 ```
+Use the to create checker (bonus)
+```bash
+make bonus
+```
 
 ### Usage
 
@@ -49,6 +53,20 @@ pa
 [bench] total ops: 5909
 [bench] sa: 0 sb: 0 ss: 0 pa: 500 pb: 500
 [bench] ra: 3600 rb: 656 rr: 0 rra: 0 rrb: 653 rrr: 0
+```
+Run the checker whit a list of numbers
+
+**Example:**
+```bash
+./checker 4 5 2 9 3
+pb
+pa
+ra
+KO
+```
+```bash
+shuf -i 0-9999 -n 500 > args.txt ; ./push_swap --bench  $(cat args.txt) 2>bench.txt | ./checker $(cat args.txt)
+OK
 ```
 
 ## Algorithms 
@@ -87,11 +105,17 @@ Here is an explanation of our choices and the performance of each algorithm:
 * Input management: `(aluslu)`
 * Flag management: `(aluslu)`
 
+#### Bonus
+
+* Checker `(aluslu + mbichet)`
+
+
 #### Others
 
 * Makefile: `(aluslu + mbichet)`
 * Push_swap.h : `(aluslu + mbichet)`
 * README: `(aluslu + mbichet)`
+
 
 ## Resources
 
