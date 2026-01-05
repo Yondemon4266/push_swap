@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker_bonus.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/05 11:52:14 by mbichet           #+#    #+#             */
+/*   Updated: 2026/01/05 11:56:23 by mbichet          ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "checker_bonus.h"
 
 static t_stack	init_empty_stack(int size, t_stack *a)
@@ -54,7 +66,6 @@ static int	is_valid_line(char *line)
 
 static void	choose_instruction(char *line, t_stack *a, t_stack *b)
 {
-
 	if (ft_strcmp(line, "pa\n") == 0)
 		pa(a, b, 0);
 	else if (ft_strcmp(line, "pb\n") == 0)
@@ -79,12 +90,12 @@ static void	choose_instruction(char *line, t_stack *a, t_stack *b)
 		ss(a, b, 0);
 }
 
-
 static void	run_checker(t_stack *a, t_stack *b)
 {
 	char	*line;
 
-	while ((line = get_next_line(0)) != NULL)
+	line = get_next_line(0);
+	while (line != NULL)
 	{
 		if (!is_valid_line(line))
 		{
@@ -96,13 +107,15 @@ static void	run_checker(t_stack *a, t_stack *b)
 		else
 			choose_instruction(line, a, b);
 		free(line);
+		line = get_next_line(0);
 	}
+	free(line);
 }
 
 int	main(int ac, char **av)
 {
-	t_stack stack_a;
-	t_stack stack_b;
+	t_stack	stack_a;
+	t_stack	stack_b;
 
 	if (ac == 1)
 		return (0);
