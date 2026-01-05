@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 17:32:46 by aluslu            #+#    #+#             */
-/*   Updated: 2026/01/05 07:25:16 by aluslu           ###   ########.fr       */
+/*   Updated: 2026/01/05 12:03:54 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static float	compute_disorder(t_stack *stack_a)
 
 int	is_stack_sorted(t_stack *a)
 {
-	float disorder;
+	float	disorder;
 
 	disorder = compute_disorder(a);
 	if (disorder == 0)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 17:32:49 by aluslu            #+#    #+#             */
-/*   Updated: 2026/01/04 18:47:00 by aluslu           ###   ########.fr       */
+/*   Updated: 2026/01/05 12:03:24 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,9 @@ static void	ranked_array(t_stack *a)
 
 t_stack	manage_input(char **av, int ac)
 {
-	char *joined_str;
-	char **splitted;
-	t_stack stack_a;
+	char	*joined_str;
+	char	**splitted;
+	t_stack	stack_a;
 
 	verify_input(av, ac);
 	joined_str = join_strings(av, ac);
