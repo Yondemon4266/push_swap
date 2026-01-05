@@ -54,6 +54,7 @@ static int	is_valid_line(char *line)
 
 static void	choose_instruction(char *line, t_stack *a, t_stack *b)
 {
+
 	if (ft_strcmp(line, "pa\n") == 0)
 		pa(a, b, 0);
 	else if (ft_strcmp(line, "pb\n") == 0)
@@ -78,34 +79,12 @@ static void	choose_instruction(char *line, t_stack *a, t_stack *b)
 		ss(a, b, 0);
 }
 
-static int	read_instruction(char **line)
-{
-	char	buffer[5];
-	int		i;
-	int		read_bytes;
-
-	read_bytes = 0;
-	while (read(0, buffer, 4) > 0)
-	{
-		i = 0;
-		buffer[4] = 0;
-		while (buffer[i])
-			(*line)[read_bytes++] = buffer[i++];
-	}
-	__builtin_printf("line:%s", *line);
-	if (read_bytes <= 0)
-		return (0);
-	return (1);
-}
 
 static void	run_checker(t_stack *a, t_stack *b)
 {
 	char	*line;
 
-	line = malloc(sizeof(char) * 1024);
-	if (!line)
-		return ;
-	while (read_instruction(&line))
+	while ((line = get_next_line(0)) != NULL)
 	{
 		if (!is_valid_line(line))
 		{

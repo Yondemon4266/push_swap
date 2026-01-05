@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aluslu <aluslu@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbichet <mbichet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 17:32:51 by aluslu            #+#    #+#             */
-/*   Updated: 2026/01/05 07:25:20 by aluslu           ###   ########.fr       */
+/*   Updated: 2026/01/05 10:43:16 by mbichet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "../libft/libft.h"
+# include "gnl_bonus/get_next_line.h"
 
 typedef struct s_stack
 {
@@ -53,6 +54,7 @@ void				swap(int *a, int *b);
 char				*ft_strcpy(char *dest, const char *src);
 void				exit_str_to_int(t_stack *a, char **str);
 int					free_stack(t_stack *a_stack, t_stack *b_stack);
+
 
 /* UTILS */
 

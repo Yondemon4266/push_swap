@@ -53,6 +53,8 @@ BONUS_C_FILES = checker_bonus/checker_bonus.c \
 	checker_bonus/action_bonus/ss_bonus.c \
 	checker_bonus/utils_bonus/utils_bonus.c \
 	checker_bonus/utils_bonus/utils_bonus_two.c \
+	checker_bonus/gnl_bonus/get_next_line.c \
+	checker_bonus/gnl_bonus/get_next_line_utils.c \
 
 BONUS_O_FILES = $(BONUS_C_FILES:%.c=$(BUILDDIR)/%.o)
 DEPS        = $(O_FILES:%.o=%.d) $(BONUS_O_FILES:.o=.d)
